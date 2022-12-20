@@ -144,7 +144,7 @@ defmodule Redshirt.RequestBuilder do
   end
 
   @type status_code :: 100..599
-  @type response_mapping :: [{status_code, struct() | false}]
+  @type response_mapping :: [{status_code, struct() | list(struct()) | false}]
 
   @doc """
   Evaluate the response from a Tesla request.
