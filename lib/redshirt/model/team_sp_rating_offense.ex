@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.TeamSpRatingOffense do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -21,17 +21,17 @@ defmodule Redshirt.Model.TeamSpRatingOffense do
   ]
 
   @type t :: %__MODULE__{
-    :ranking => float() | nil,
-    :rating => float() | nil,
-    :success => float() | nil,
-    :explosiveness => float() | nil,
-    :rushing => float() | nil,
-    :passing => float() | nil,
-    :standardDowns => float() | nil,
-    :passingDowns => float() | nil,
-    :runRate => float() | nil,
-    :pace => float() | nil
-  }
+          :ranking => float() | nil,
+          :rating => float() | nil,
+          :success => float() | nil,
+          :explosiveness => float() | nil,
+          :rushing => float() | nil,
+          :passing => float() | nil,
+          :standardDowns => float() | nil,
+          :passingDowns => float() | nil,
+          :runRate => float() | nil,
+          :pace => float() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.TeamSpRatingOffense do
@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.TeamSpRatingOffense do
     value
   end
 end
-

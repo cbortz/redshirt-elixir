@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.TeamSpRatingDefense do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -20,23 +20,23 @@ defmodule Redshirt.Model.TeamSpRatingDefense do
   ]
 
   @type t :: %__MODULE__{
-    :ranking => float() | nil,
-    :rating => float() | nil,
-    :success => float() | nil,
-    :explosiveness => float() | nil,
-    :rushing => float() | nil,
-    :pasing => float() | nil,
-    :standardDowns => float() | nil,
-    :passingDowns => float() | nil,
-    :havoc => Redshirt.Model.TeamSpRatingDefenseHavoc.t | nil
-  }
+          :ranking => float() | nil,
+          :rating => float() | nil,
+          :success => float() | nil,
+          :explosiveness => float() | nil,
+          :rushing => float() | nil,
+          :pasing => float() | nil,
+          :standardDowns => float() | nil,
+          :passingDowns => float() | nil,
+          :havoc => Redshirt.Model.TeamSpRatingDefenseHavoc.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.TeamSpRatingDefense do
   import Redshirt.Deserializer
+
   def decode(value, options) do
     value
     |> deserialize(:havoc, :struct, Redshirt.Model.TeamSpRatingDefenseHavoc, options)
   end
 end
-

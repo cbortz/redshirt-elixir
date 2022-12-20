@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.PlayerGamePpaAveragePpa do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -14,10 +14,10 @@ defmodule Redshirt.Model.PlayerGamePpaAveragePpa do
   ]
 
   @type t :: %__MODULE__{
-    :all => float() | nil,
-    :pass => float() | nil,
-    :rush => float() | nil
-  }
+          :all => float() | nil,
+          :pass => float() | nil,
+          :rush => float() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.PlayerGamePpaAveragePpa do
@@ -25,4 +25,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.PlayerGamePpaAveragePpa do
     value
   end
 end
-

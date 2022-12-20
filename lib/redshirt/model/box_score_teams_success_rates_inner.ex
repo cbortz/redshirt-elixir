@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.BoxScoreTeamsSuccessRatesInner do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -15,15 +15,16 @@ defmodule Redshirt.Model.BoxScoreTeamsSuccessRatesInner do
   ]
 
   @type t :: %__MODULE__{
-    :team => String.t | nil,
-    :overall => Redshirt.Model.BoxScoreTeamsPpaInnerOverall.t | nil,
-    :standardDowns => Redshirt.Model.BoxScoreTeamsPpaInnerOverall.t | nil,
-    :passingDowns => Redshirt.Model.BoxScoreTeamsPpaInnerOverall.t | nil
-  }
+          :team => String.t() | nil,
+          :overall => Redshirt.Model.BoxScoreTeamsPpaInnerOverall.t() | nil,
+          :standardDowns => Redshirt.Model.BoxScoreTeamsPpaInnerOverall.t() | nil,
+          :passingDowns => Redshirt.Model.BoxScoreTeamsPpaInnerOverall.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.BoxScoreTeamsSuccessRatesInner do
   import Redshirt.Deserializer
+
   def decode(value, options) do
     value
     |> deserialize(:overall, :struct, Redshirt.Model.BoxScoreTeamsPpaInnerOverall, options)
@@ -31,4 +32,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.BoxScoreTeamsSuccessRatesInner do
     |> deserialize(:passingDowns, :struct, Redshirt.Model.BoxScoreTeamsPpaInnerOverall, options)
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.Game do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -44,40 +44,40 @@ defmodule Redshirt.Model.Game do
   ]
 
   @type t :: %__MODULE__{
-    :id => integer() | nil,
-    :season => integer() | nil,
-    :week => integer() | nil,
-    :season_type => String.t | nil,
-    :start_date => String.t | nil,
-    :start_time_tbd => boolean() | nil,
-    :completed => boolean() | nil,
-    :neutral_site => boolean() | nil,
-    :conference_game => boolean() | nil,
-    :attendance => integer() | nil,
-    :venue_id => integer() | nil,
-    :venue => String.t | nil,
-    :home_id => integer() | nil,
-    :home_team => String.t | nil,
-    :home_conference => String.t | nil,
-    :home_division => String.t | nil,
-    :home_points => integer() | nil,
-    :home_line_scores => [integer()] | nil,
-    :home_post_win_prob => float() | nil,
-    :home_pregame_elo => integer() | nil,
-    :home_postgame_elo => integer() | nil,
-    :away_id => integer() | nil,
-    :away_team => String.t | nil,
-    :away_conference => String.t | nil,
-    :away_division => String.t | nil,
-    :away_points => integer() | nil,
-    :away_line_scores => [integer()] | nil,
-    :away_post_win_prob => float() | nil,
-    :away_pregame_elo => integer() | nil,
-    :away_postgame_elo => integer() | nil,
-    :excitement_index => float() | nil,
-    :highlights => String.t | nil,
-    :notes => String.t | nil
-  }
+          :id => integer() | nil,
+          :season => integer() | nil,
+          :week => integer() | nil,
+          :season_type => String.t() | nil,
+          :start_date => String.t() | nil,
+          :start_time_tbd => boolean() | nil,
+          :completed => boolean() | nil,
+          :neutral_site => boolean() | nil,
+          :conference_game => boolean() | nil,
+          :attendance => integer() | nil,
+          :venue_id => integer() | nil,
+          :venue => String.t() | nil,
+          :home_id => integer() | nil,
+          :home_team => String.t() | nil,
+          :home_conference => String.t() | nil,
+          :home_division => String.t() | nil,
+          :home_points => integer() | nil,
+          :home_line_scores => [integer()] | nil,
+          :home_post_win_prob => float() | nil,
+          :home_pregame_elo => integer() | nil,
+          :home_postgame_elo => integer() | nil,
+          :away_id => integer() | nil,
+          :away_team => String.t() | nil,
+          :away_conference => String.t() | nil,
+          :away_division => String.t() | nil,
+          :away_points => integer() | nil,
+          :away_line_scores => [integer()] | nil,
+          :away_post_win_prob => float() | nil,
+          :away_pregame_elo => integer() | nil,
+          :away_postgame_elo => integer() | nil,
+          :excitement_index => float() | nil,
+          :highlights => String.t() | nil,
+          :notes => String.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.Game do
@@ -85,4 +85,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.Game do
     value
   end
 end
-

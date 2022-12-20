@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.BoxScoreTeams do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -19,19 +19,21 @@ defmodule Redshirt.Model.BoxScoreTeams do
   ]
 
   @type t :: %__MODULE__{
-    :ppa => [Redshirt.Model.BoxScoreTeamsPpaInner.t] | nil,
-    :cumulativePpa => [Redshirt.Model.BoxScoreTeamsPpaInner.t] | nil,
-    :successRates => [Redshirt.Model.BoxScoreTeamsSuccessRatesInner.t] | nil,
-    :explosiveness => [Redshirt.Model.BoxScoreTeamsExplosivenessInner.t] | nil,
-    :rushing => [Redshirt.Model.BoxScoreTeamsRushingInner.t] | nil,
-    :havoc => [Redshirt.Model.BoxScoreTeamsHavocInner.t] | nil,
-    :scoringOpportunities => [Redshirt.Model.BoxScoreTeamsScoringOpportunitiesInner.t] | nil,
-    :fieldPosition => [Redshirt.Model.BoxScoreTeamsFieldPositionInner.t] | nil
-  }
+          :ppa => [Redshirt.Model.BoxScoreTeamsPpaInner.t()] | nil,
+          :cumulativePpa => [Redshirt.Model.BoxScoreTeamsPpaInner.t()] | nil,
+          :successRates => [Redshirt.Model.BoxScoreTeamsSuccessRatesInner.t()] | nil,
+          :explosiveness => [Redshirt.Model.BoxScoreTeamsExplosivenessInner.t()] | nil,
+          :rushing => [Redshirt.Model.BoxScoreTeamsRushingInner.t()] | nil,
+          :havoc => [Redshirt.Model.BoxScoreTeamsHavocInner.t()] | nil,
+          :scoringOpportunities =>
+            [Redshirt.Model.BoxScoreTeamsScoringOpportunitiesInner.t()] | nil,
+          :fieldPosition => [Redshirt.Model.BoxScoreTeamsFieldPositionInner.t()] | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.BoxScoreTeams do
   import Redshirt.Deserializer
+
   def decode(value, options) do
     value
     |> deserialize(:ppa, :list, Redshirt.Model.BoxScoreTeamsPpaInner, options)
@@ -40,8 +42,12 @@ defimpl Poison.Decoder, for: Redshirt.Model.BoxScoreTeams do
     |> deserialize(:explosiveness, :list, Redshirt.Model.BoxScoreTeamsExplosivenessInner, options)
     |> deserialize(:rushing, :list, Redshirt.Model.BoxScoreTeamsRushingInner, options)
     |> deserialize(:havoc, :list, Redshirt.Model.BoxScoreTeamsHavocInner, options)
-    |> deserialize(:scoringOpportunities, :list, Redshirt.Model.BoxScoreTeamsScoringOpportunitiesInner, options)
+    |> deserialize(
+      :scoringOpportunities,
+      :list,
+      Redshirt.Model.BoxScoreTeamsScoringOpportunitiesInner,
+      options
+    )
     |> deserialize(:fieldPosition, :list, Redshirt.Model.BoxScoreTeamsFieldPositionInner, options)
   end
 end
-

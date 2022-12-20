@@ -29,7 +29,8 @@ defmodule Redshirt.Api.Coaches do
   - `{:ok, [%Coach{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_coaches(Tesla.Env.client, keyword()) :: {:ok, list(Redshirt.Model.Coach.t)} | {:error, Tesla.Env.t}
+  @spec get_coaches(Tesla.Env.client(), keyword()) ::
+          {:ok, list(Redshirt.Model.Coach.t())} | {:error, Tesla.Env.t()}
   def get_coaches(connection, opts \\ []) do
     optional_params = %{
       :firstName => :query,

@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.ScoreboardGameVenue do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -14,10 +14,10 @@ defmodule Redshirt.Model.ScoreboardGameVenue do
   ]
 
   @type t :: %__MODULE__{
-    :name => String.t | nil,
-    :city => String.t | nil,
-    :state => String.t | nil
-  }
+          :name => String.t() | nil,
+          :city => String.t() | nil,
+          :state => String.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.ScoreboardGameVenue do
@@ -25,4 +25,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.ScoreboardGameVenue do
     value
   end
 end
-

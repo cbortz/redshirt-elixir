@@ -25,7 +25,10 @@ defmodule Redshirt.Api.Ratings do
   - `{:ok, [%ConferenceSpRating{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_conference_sp_ratings(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.ConferenceSpRating.t)} | {:error, Tesla.Env.t}
+  @spec get_conference_sp_ratings(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, list(Redshirt.Model.ConferenceSpRating.t())}
+          | {:error, Tesla.Env.t()}
   def get_conference_sp_ratings(connection, opts \\ []) do
     optional_params = %{
       :year => :query,
@@ -65,7 +68,8 @@ defmodule Redshirt.Api.Ratings do
   - `{:ok, [%TeamEloRating{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_elo_ratings(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.TeamEloRating.t)} | {:error, Tesla.Env.t}
+  @spec get_elo_ratings(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.TeamEloRating.t())} | {:error, Tesla.Env.t()}
   def get_elo_ratings(connection, opts \\ []) do
     optional_params = %{
       :year => :query,
@@ -105,7 +109,8 @@ defmodule Redshirt.Api.Ratings do
   - `{:ok, [%TeamSpRating{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_sp_ratings(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.TeamSpRating.t)} | {:error, Tesla.Env.t}
+  @spec get_sp_ratings(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.TeamSpRating.t())} | {:error, Tesla.Env.t()}
   def get_sp_ratings(connection, opts \\ []) do
     optional_params = %{
       :year => :query,
@@ -144,7 +149,8 @@ defmodule Redshirt.Api.Ratings do
   - `{:ok, [%TeamSrsRating{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_srs_ratings(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.TeamSrsRating.t)} | {:error, Tesla.Env.t}
+  @spec get_srs_ratings(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.TeamSrsRating.t())} | {:error, Tesla.Env.t()}
   def get_srs_ratings(connection, opts \\ []) do
     optional_params = %{
       :year => :query,

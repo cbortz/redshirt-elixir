@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.PlayerSeasonPpaAveragePpa do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -19,15 +19,15 @@ defmodule Redshirt.Model.PlayerSeasonPpaAveragePpa do
   ]
 
   @type t :: %__MODULE__{
-    :all => float() | nil,
-    :pass => float() | nil,
-    :rush => float() | nil,
-    :firstDown => float() | nil,
-    :secondDown => float() | nil,
-    :thirdDown => float() | nil,
-    :standardDowns => float() | nil,
-    :passingDowns => float() | nil
-  }
+          :all => float() | nil,
+          :pass => float() | nil,
+          :rush => float() | nil,
+          :firstDown => float() | nil,
+          :secondDown => float() | nil,
+          :thirdDown => float() | nil,
+          :standardDowns => float() | nil,
+          :passingDowns => float() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.PlayerSeasonPpaAveragePpa do
@@ -35,4 +35,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.PlayerSeasonPpaAveragePpa do
     value
   end
 end
-

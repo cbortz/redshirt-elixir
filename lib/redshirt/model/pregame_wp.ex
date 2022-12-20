@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.PregameWp do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -19,15 +19,15 @@ defmodule Redshirt.Model.PregameWp do
   ]
 
   @type t :: %__MODULE__{
-    :season => integer() | nil,
-    :seasonType => String.t | nil,
-    :week => integer() | nil,
-    :gameId => integer() | nil,
-    :homeTeam => String.t | nil,
-    :awayTeam => String.t | nil,
-    :spread => float() | nil,
-    :homeWinProb => float() | nil
-  }
+          :season => integer() | nil,
+          :seasonType => String.t() | nil,
+          :week => integer() | nil,
+          :gameId => integer() | nil,
+          :homeTeam => String.t() | nil,
+          :awayTeam => String.t() | nil,
+          :spread => float() | nil,
+          :homeWinProb => float() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.PregameWp do
@@ -35,4 +35,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.PregameWp do
     value
   end
 end
-

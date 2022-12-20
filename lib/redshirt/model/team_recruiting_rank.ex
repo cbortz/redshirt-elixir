@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.TeamRecruitingRank do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -15,11 +15,11 @@ defmodule Redshirt.Model.TeamRecruitingRank do
   ]
 
   @type t :: %__MODULE__{
-    :year => integer() | nil,
-    :rank => integer() | nil,
-    :team => String.t | nil,
-    :points => float() | nil
-  }
+          :year => integer() | nil,
+          :rank => integer() | nil,
+          :team => String.t() | nil,
+          :points => float() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.TeamRecruitingRank do
@@ -27,4 +27,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.TeamRecruitingRank do
     value
   end
 end
-

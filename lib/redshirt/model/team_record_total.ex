@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.TeamRecordTotal do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -15,11 +15,11 @@ defmodule Redshirt.Model.TeamRecordTotal do
   ]
 
   @type t :: %__MODULE__{
-    :games => integer() | nil,
-    :wins => integer() | nil,
-    :losses => integer() | nil,
-    :ties => integer() | nil
-  }
+          :games => integer() | nil,
+          :wins => integer() | nil,
+          :losses => integer() | nil,
+          :ties => integer() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.TeamRecordTotal do
@@ -27,4 +27,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.TeamRecordTotal do
     value
   end
 end
-

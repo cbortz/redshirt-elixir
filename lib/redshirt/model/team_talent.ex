@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.TeamTalent do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -14,10 +14,10 @@ defmodule Redshirt.Model.TeamTalent do
   ]
 
   @type t :: %__MODULE__{
-    :year => integer() | nil,
-    :school => String.t | nil,
-    :talent => float() | nil
-  }
+          :year => integer() | nil,
+          :school => String.t() | nil,
+          :talent => float() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.TeamTalent do
@@ -25,4 +25,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.TeamTalent do
     value
   end
 end
-

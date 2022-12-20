@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.TeamMatchupGamesInner do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -22,18 +22,18 @@ defmodule Redshirt.Model.TeamMatchupGamesInner do
   ]
 
   @type t :: %__MODULE__{
-    :season => integer() | nil,
-    :week => integer() | nil,
-    :season_type => String.t | nil,
-    :date => String.t | nil,
-    :neutralSite => boolean() | nil,
-    :venue => String.t | nil,
-    :homeTeam => String.t | nil,
-    :homeScore => integer() | nil,
-    :awayTeam => String.t | nil,
-    :awayScore => integer() | nil,
-    :winner => String.t | nil
-  }
+          :season => integer() | nil,
+          :week => integer() | nil,
+          :season_type => String.t() | nil,
+          :date => String.t() | nil,
+          :neutralSite => boolean() | nil,
+          :venue => String.t() | nil,
+          :homeTeam => String.t() | nil,
+          :homeScore => integer() | nil,
+          :awayTeam => String.t() | nil,
+          :awayScore => integer() | nil,
+          :winner => String.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.TeamMatchupGamesInner do
@@ -41,4 +41,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.TeamMatchupGamesInner do
     value
   end
 end
-

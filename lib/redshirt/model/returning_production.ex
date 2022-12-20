@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.ReturningProduction do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -26,22 +26,22 @@ defmodule Redshirt.Model.ReturningProduction do
   ]
 
   @type t :: %__MODULE__{
-    :season => integer() | nil,
-    :team => String.t | nil,
-    :conference => String.t | nil,
-    :totalPPA => float() | nil,
-    :totalPassingPPA => float() | nil,
-    :totalReceivingPPA => float() | nil,
-    :totalRushingPPA => float() | nil,
-    :percentPPA => float() | nil,
-    :percentPassingPPA => float() | nil,
-    :percentReceivingPPA => float() | nil,
-    :percentRushingPPA => float() | nil,
-    :usage => float() | nil,
-    :passingUsage => float() | nil,
-    :receivingUsage => float() | nil,
-    :rushingUsage => float() | nil
-  }
+          :season => integer() | nil,
+          :team => String.t() | nil,
+          :conference => String.t() | nil,
+          :totalPPA => float() | nil,
+          :totalPassingPPA => float() | nil,
+          :totalReceivingPPA => float() | nil,
+          :totalRushingPPA => float() | nil,
+          :percentPPA => float() | nil,
+          :percentPassingPPA => float() | nil,
+          :percentReceivingPPA => float() | nil,
+          :percentRushingPPA => float() | nil,
+          :usage => float() | nil,
+          :passingUsage => float() | nil,
+          :receivingUsage => float() | nil,
+          :rushingUsage => float() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.ReturningProduction do
@@ -49,4 +49,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.ReturningProduction do
     value
   end
 end
-

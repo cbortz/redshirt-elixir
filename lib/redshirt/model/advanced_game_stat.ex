@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.AdvancedGameStat do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -18,22 +18,22 @@ defmodule Redshirt.Model.AdvancedGameStat do
   ]
 
   @type t :: %__MODULE__{
-    :gameId => integer() | nil,
-    :season => integer() | nil,
-    :week => integer() | nil,
-    :team => String.t | nil,
-    :opponent => String.t | nil,
-    :offense => Redshirt.Model.AdvancedGameStatOffense.t | nil,
-    :defense => Redshirt.Model.AdvancedGameStatOffense.t | nil
-  }
+          :gameId => integer() | nil,
+          :season => integer() | nil,
+          :week => integer() | nil,
+          :team => String.t() | nil,
+          :opponent => String.t() | nil,
+          :offense => Redshirt.Model.AdvancedGameStatOffense.t() | nil,
+          :defense => Redshirt.Model.AdvancedGameStatOffense.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.AdvancedGameStat do
   import Redshirt.Deserializer
+
   def decode(value, options) do
     value
     |> deserialize(:offense, :struct, Redshirt.Model.AdvancedGameStatOffense, options)
     |> deserialize(:defense, :struct, Redshirt.Model.AdvancedGameStatOffense, options)
   end
 end
-

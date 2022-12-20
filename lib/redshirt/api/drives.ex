@@ -33,7 +33,8 @@ defmodule Redshirt.Api.Drives do
   - `{:ok, [%Drive{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_drives(Tesla.Env.client, integer(), keyword()) :: {:ok, list(Redshirt.Model.Drive.t)} | {:error, Tesla.Env.t}
+  @spec get_drives(Tesla.Env.client(), integer(), keyword()) ::
+          {:ok, list(Redshirt.Model.Drive.t())} | {:error, Tesla.Env.t()}
   def get_drives(connection, year, opts \\ []) do
     optional_params = %{
       :seasonType => :query,

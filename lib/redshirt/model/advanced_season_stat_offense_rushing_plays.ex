@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.AdvancedSeasonStatOffenseRushingPlays do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -16,12 +16,12 @@ defmodule Redshirt.Model.AdvancedSeasonStatOffenseRushingPlays do
   ]
 
   @type t :: %__MODULE__{
-    :rate => float() | nil,
-    :ppa => float() | nil,
-    :totalPPA => float() | nil,
-    :successRate => float() | nil,
-    :explosiveness => float() | nil
-  }
+          :rate => float() | nil,
+          :ppa => float() | nil,
+          :totalPPA => float() | nil,
+          :successRate => float() | nil,
+          :explosiveness => float() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.AdvancedSeasonStatOffenseRushingPlays do
@@ -29,4 +29,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.AdvancedSeasonStatOffenseRushingPlay
     value
   end
 end
-

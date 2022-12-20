@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.TeamSpRatingDefenseHavoc do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -14,10 +14,10 @@ defmodule Redshirt.Model.TeamSpRatingDefenseHavoc do
   ]
 
   @type t :: %__MODULE__{
-    :total => float() | nil,
-    :frontSeven => float() | nil,
-    :db => float() | nil
-  }
+          :total => float() | nil,
+          :frontSeven => float() | nil,
+          :db => float() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.TeamSpRatingDefenseHavoc do
@@ -25,4 +25,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.TeamSpRatingDefenseHavoc do
     value
   end
 end
-

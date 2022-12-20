@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.ScoreboardGameBetting do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -15,11 +15,11 @@ defmodule Redshirt.Model.ScoreboardGameBetting do
   ]
 
   @type t :: %__MODULE__{
-    :spread => float() | nil,
-    :overUnder => float() | nil,
-    :homeMoneyline => integer() | nil,
-    :awayMoneyline => integer() | nil
-  }
+          :spread => float() | nil,
+          :overUnder => float() | nil,
+          :homeMoneyline => integer() | nil,
+          :awayMoneyline => integer() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.ScoreboardGameBetting do
@@ -27,4 +27,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.ScoreboardGameBetting do
     value
   end
 end
-

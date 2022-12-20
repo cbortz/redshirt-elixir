@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.PlayStatType do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -13,9 +13,9 @@ defmodule Redshirt.Model.PlayStatType do
   ]
 
   @type t :: %__MODULE__{
-    :id => integer() | nil,
-    :name => String.t | nil
-  }
+          :id => integer() | nil,
+          :name => String.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.PlayStatType do
@@ -23,4 +23,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.PlayStatType do
     value
   end
 end
-

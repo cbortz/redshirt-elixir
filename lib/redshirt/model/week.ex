@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.Week do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -16,12 +16,12 @@ defmodule Redshirt.Model.Week do
   ]
 
   @type t :: %__MODULE__{
-    :season => integer() | nil,
-    :week => integer() | nil,
-    :seasonType => String.t | nil,
-    :firstGameStart => String.t | nil,
-    :lastGameStart => String.t | nil
-  }
+          :season => integer() | nil,
+          :week => integer() | nil,
+          :seasonType => String.t() | nil,
+          :firstGameStart => String.t() | nil,
+          :lastGameStart => String.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.Week do
@@ -29,4 +29,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.Week do
     value
   end
 end
-

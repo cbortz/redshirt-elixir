@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.TeamSeason do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -23,19 +23,19 @@ defmodule Redshirt.Model.TeamSeason do
   ]
 
   @type t :: %__MODULE__{
-    :school => String.t | nil,
-    :year => String.t | nil,
-    :games => integer() | nil,
-    :wins => integer() | nil,
-    :losses => integer() | nil,
-    :ties => integer() | nil,
-    :preseason_rank => integer() | nil,
-    :postseason_rank => integer() | nil,
-    :srs => float() | nil,
-    :sp_overall => float() | nil,
-    :sp_offense => float() | nil,
-    :sp_defense => float() | nil
-  }
+          :school => String.t() | nil,
+          :year => String.t() | nil,
+          :games => integer() | nil,
+          :wins => integer() | nil,
+          :losses => integer() | nil,
+          :ties => integer() | nil,
+          :preseason_rank => integer() | nil,
+          :postseason_rank => integer() | nil,
+          :srs => float() | nil,
+          :sp_overall => float() | nil,
+          :sp_offense => float() | nil,
+          :sp_defense => float() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.TeamSeason do
@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.TeamSeason do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.DriveStartTime do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -13,9 +13,9 @@ defmodule Redshirt.Model.DriveStartTime do
   ]
 
   @type t :: %__MODULE__{
-    :minutes => integer() | nil,
-    :seconds => integer() | nil
-  }
+          :minutes => integer() | nil,
+          :seconds => integer() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.DriveStartTime do
@@ -23,4 +23,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.DriveStartTime do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.VenueLocation do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -13,9 +13,9 @@ defmodule Redshirt.Model.VenueLocation do
   ]
 
   @type t :: %__MODULE__{
-    :x => float() | nil,
-    :y => float() | nil
-  }
+          :x => float() | nil,
+          :y => float() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.VenueLocation do
@@ -23,4 +23,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.VenueLocation do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.DraftPick do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -29,32 +29,32 @@ defmodule Redshirt.Model.DraftPick do
   ]
 
   @type t :: %__MODULE__{
-    :collegeAthleteId => integer() | nil,
-    :nflAthleteId => integer() | nil,
-    :collegeId => integer() | nil,
-    :collegeTeam => String.t | nil,
-    :collegeConference => String.t | nil,
-    :nflTeam => String.t | nil,
-    :year => integer() | nil,
-    :overall => integer() | nil,
-    :round => integer() | nil,
-    :pick => integer() | nil,
-    :name => String.t | nil,
-    :position => String.t | nil,
-    :height => integer() | nil,
-    :weight => integer() | nil,
-    :preDraftRanking => integer() | nil,
-    :preDraftPositionRanking => integer() | nil,
-    :preDraftGrade => integer() | nil,
-    :hometownInfo => Redshirt.Model.DraftPickHometownInfo.t | nil
-  }
+          :collegeAthleteId => integer() | nil,
+          :nflAthleteId => integer() | nil,
+          :collegeId => integer() | nil,
+          :collegeTeam => String.t() | nil,
+          :collegeConference => String.t() | nil,
+          :nflTeam => String.t() | nil,
+          :year => integer() | nil,
+          :overall => integer() | nil,
+          :round => integer() | nil,
+          :pick => integer() | nil,
+          :name => String.t() | nil,
+          :position => String.t() | nil,
+          :height => integer() | nil,
+          :weight => integer() | nil,
+          :preDraftRanking => integer() | nil,
+          :preDraftPositionRanking => integer() | nil,
+          :preDraftGrade => integer() | nil,
+          :hometownInfo => Redshirt.Model.DraftPickHometownInfo.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.DraftPick do
   import Redshirt.Deserializer
+
   def decode(value, options) do
     value
     |> deserialize(:hometownInfo, :struct, Redshirt.Model.DraftPickHometownInfo, options)
   end
 end
-

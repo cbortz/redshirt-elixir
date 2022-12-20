@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.PlayType do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -14,10 +14,10 @@ defmodule Redshirt.Model.PlayType do
   ]
 
   @type t :: %__MODULE__{
-    :id => integer() | nil,
-    :text => String.t | nil,
-    :abbreviation => String.t | nil
-  }
+          :id => integer() | nil,
+          :text => String.t() | nil,
+          :abbreviation => String.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.PlayType do
@@ -25,4 +25,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.PlayType do
     value
   end
 end
-

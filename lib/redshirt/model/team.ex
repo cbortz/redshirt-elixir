@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.Team do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -26,29 +26,29 @@ defmodule Redshirt.Model.Team do
   ]
 
   @type t :: %__MODULE__{
-    :id => integer() | nil,
-    :school => String.t | nil,
-    :mascot => String.t | nil,
-    :abbreviation => String.t | nil,
-    :alt_name_1 => String.t | nil,
-    :alt_name_2 => String.t | nil,
-    :alt_name_3 => String.t | nil,
-    :classification => String.t | nil,
-    :conference => String.t | nil,
-    :division => String.t | nil,
-    :color => String.t | nil,
-    :alt_color => String.t | nil,
-    :logos => [String.t] | nil,
-    :twitter => String.t | nil,
-    :location => Redshirt.Model.TeamLocation.t | nil
-  }
+          :id => integer() | nil,
+          :school => String.t() | nil,
+          :mascot => String.t() | nil,
+          :abbreviation => String.t() | nil,
+          :alt_name_1 => String.t() | nil,
+          :alt_name_2 => String.t() | nil,
+          :alt_name_3 => String.t() | nil,
+          :classification => String.t() | nil,
+          :conference => String.t() | nil,
+          :division => String.t() | nil,
+          :color => String.t() | nil,
+          :alt_color => String.t() | nil,
+          :logos => [String.t()] | nil,
+          :twitter => String.t() | nil,
+          :location => Redshirt.Model.TeamLocation.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.Team do
   import Redshirt.Deserializer
+
   def decode(value, options) do
     value
     |> deserialize(:location, :struct, Redshirt.Model.TeamLocation, options)
   end
 end
-

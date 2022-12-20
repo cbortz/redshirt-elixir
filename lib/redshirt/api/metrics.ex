@@ -29,7 +29,8 @@ defmodule Redshirt.Api.Metrics do
   - `{:ok, [%GamePpa{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_game_ppa(Tesla.Env.client, integer(), keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.GamePpa.t)} | {:error, Tesla.Env.t}
+  @spec get_game_ppa(Tesla.Env.client(), integer(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.GamePpa.t())} | {:error, Tesla.Env.t()}
   def get_game_ppa(connection, year, opts \\ []) do
     optional_params = %{
       :week => :query,
@@ -77,7 +78,8 @@ defmodule Redshirt.Api.Metrics do
   - `{:ok, [%PlayerGamePpa{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_player_game_ppa(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.PlayerGamePpa.t)} | {:error, Tesla.Env.t}
+  @spec get_player_game_ppa(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.PlayerGamePpa.t())} | {:error, Tesla.Env.t()}
   def get_player_game_ppa(connection, opts \\ []) do
     optional_params = %{
       :year => :query,
@@ -126,7 +128,8 @@ defmodule Redshirt.Api.Metrics do
   - `{:ok, [%PlayerSeasonPpa{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_player_season_ppa(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.PlayerSeasonPpa.t)} | {:error, Tesla.Env.t}
+  @spec get_player_season_ppa(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.PlayerSeasonPpa.t())} | {:error, Tesla.Env.t()}
   def get_player_season_ppa(connection, opts \\ []) do
     optional_params = %{
       :year => :query,
@@ -169,7 +172,8 @@ defmodule Redshirt.Api.Metrics do
   - `{:ok, [%PredictedPoints{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_predicted_points(Tesla.Env.client, integer(), integer(), keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.PredictedPoints.t)} | {:error, Tesla.Env.t}
+  @spec get_predicted_points(Tesla.Env.client(), integer(), integer(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.PredictedPoints.t())} | {:error, Tesla.Env.t()}
   def get_predicted_points(connection, down, distance, _opts \\ []) do
     request =
       %{}
@@ -205,7 +209,8 @@ defmodule Redshirt.Api.Metrics do
   - `{:ok, [%PregameWp{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_pregame_win_probabilities(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.PregameWp.t)} | {:error, Tesla.Env.t}
+  @spec get_pregame_win_probabilities(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.PregameWp.t())} | {:error, Tesla.Env.t()}
   def get_pregame_win_probabilities(connection, opts \\ []) do
     optional_params = %{
       :year => :query,
@@ -247,7 +252,8 @@ defmodule Redshirt.Api.Metrics do
   - `{:ok, [%TeamPpa{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_team_ppa(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.TeamPpa.t)} | {:error, Tesla.Env.t}
+  @spec get_team_ppa(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.TeamPpa.t())} | {:error, Tesla.Env.t()}
   def get_team_ppa(connection, opts \\ []) do
     optional_params = %{
       :year => :query,
@@ -286,7 +292,8 @@ defmodule Redshirt.Api.Metrics do
   - `{:ok, [%PlayWp{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_win_probability_data(Tesla.Env.client, integer(), keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.PlayWp.t)} | {:error, Tesla.Env.t}
+  @spec get_win_probability_data(Tesla.Env.client(), integer(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.PlayWp.t())} | {:error, Tesla.Env.t()}
   def get_win_probability_data(connection, game_id, _opts \\ []) do
     request =
       %{}

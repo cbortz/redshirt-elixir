@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.GameLinesLinesInner do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -19,15 +19,15 @@ defmodule Redshirt.Model.GameLinesLinesInner do
   ]
 
   @type t :: %__MODULE__{
-    :provider => String.t | nil,
-    :spread => float() | nil,
-    :formattedSpread => String.t | nil,
-    :spreadOpen => float() | nil,
-    :overUnder => float() | nil,
-    :overUnderOpen => float() | nil,
-    :homeMoneyline => float() | nil,
-    :awayMoneyline => float() | nil
-  }
+          :provider => String.t() | nil,
+          :spread => float() | nil,
+          :formattedSpread => String.t() | nil,
+          :spreadOpen => float() | nil,
+          :overUnder => float() | nil,
+          :overUnderOpen => float() | nil,
+          :homeMoneyline => float() | nil,
+          :awayMoneyline => float() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.GameLinesLinesInner do
@@ -35,4 +35,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.GameLinesLinesInner do
     value
   end
 end
-

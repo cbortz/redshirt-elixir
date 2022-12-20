@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.BoxScoreTeamsScoringOpportunitiesInner do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -15,11 +15,11 @@ defmodule Redshirt.Model.BoxScoreTeamsScoringOpportunitiesInner do
   ]
 
   @type t :: %__MODULE__{
-    :team => String.t | nil,
-    :opportunities => integer() | nil,
-    :points => integer() | nil,
-    :pointsPerOpportunity => float() | nil
-  }
+          :team => String.t() | nil,
+          :opportunities => integer() | nil,
+          :points => integer() | nil,
+          :pointsPerOpportunity => float() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.BoxScoreTeamsScoringOpportunitiesInner do
@@ -27,4 +27,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.BoxScoreTeamsScoringOpportunitiesInn
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.Player do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -27,23 +27,23 @@ defmodule Redshirt.Model.Player do
   ]
 
   @type t :: %__MODULE__{
-    :id => integer() | nil,
-    :first_name => String.t | nil,
-    :last_name => String.t | nil,
-    :team => String.t | nil,
-    :height => integer() | nil,
-    :weight => integer() | nil,
-    :jersey => integer() | nil,
-    :year => integer() | nil,
-    :position => String.t | nil,
-    :home_city => String.t | nil,
-    :home_state => String.t | nil,
-    :home_country => String.t | nil,
-    :home_latitude => float() | nil,
-    :home_longitude => float() | nil,
-    :home_county_fips => String.t | nil,
-    :recruit_ids => [integer()] | nil
-  }
+          :id => integer() | nil,
+          :first_name => String.t() | nil,
+          :last_name => String.t() | nil,
+          :team => String.t() | nil,
+          :height => integer() | nil,
+          :weight => integer() | nil,
+          :jersey => integer() | nil,
+          :year => integer() | nil,
+          :position => String.t() | nil,
+          :home_city => String.t() | nil,
+          :home_state => String.t() | nil,
+          :home_country => String.t() | nil,
+          :home_latitude => float() | nil,
+          :home_longitude => float() | nil,
+          :home_county_fips => String.t() | nil,
+          :recruit_ids => [integer()] | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.Player do
@@ -51,4 +51,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.Player do
     value
   end
 end
-

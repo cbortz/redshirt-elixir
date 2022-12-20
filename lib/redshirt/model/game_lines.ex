@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.GameLines do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -23,26 +23,26 @@ defmodule Redshirt.Model.GameLines do
   ]
 
   @type t :: %__MODULE__{
-    :id => integer() | nil,
-    :season => integer() | nil,
-    :week => integer() | nil,
-    :seasonType => String.t | nil,
-    :startDate => String.t | nil,
-    :homeTeam => String.t | nil,
-    :homeConference => String.t | nil,
-    :homeScore => integer() | nil,
-    :awayTeam => String.t | nil,
-    :awayConference => String.t | nil,
-    :awayScore => integer() | nil,
-    :lines => [Redshirt.Model.GameLinesLinesInner.t] | nil
-  }
+          :id => integer() | nil,
+          :season => integer() | nil,
+          :week => integer() | nil,
+          :seasonType => String.t() | nil,
+          :startDate => String.t() | nil,
+          :homeTeam => String.t() | nil,
+          :homeConference => String.t() | nil,
+          :homeScore => integer() | nil,
+          :awayTeam => String.t() | nil,
+          :awayConference => String.t() | nil,
+          :awayScore => integer() | nil,
+          :lines => [Redshirt.Model.GameLinesLinesInner.t()] | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.GameLines do
   import Redshirt.Deserializer
+
   def decode(value, options) do
     value
     |> deserialize(:lines, :list, Redshirt.Model.GameLinesLinesInner, options)
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.ScoreboardGameWeather do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -15,11 +15,11 @@ defmodule Redshirt.Model.ScoreboardGameWeather do
   ]
 
   @type t :: %__MODULE__{
-    :temperature => float() | nil,
-    :description => String.t | nil,
-    :windSpeed => float() | nil,
-    :windDirection => float() | nil
-  }
+          :temperature => float() | nil,
+          :description => String.t() | nil,
+          :windSpeed => float() | nil,
+          :windDirection => float() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.ScoreboardGameWeather do
@@ -27,4 +27,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.ScoreboardGameWeather do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.RankingWeekPollsInnerRanksInner do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -16,12 +16,12 @@ defmodule Redshirt.Model.RankingWeekPollsInnerRanksInner do
   ]
 
   @type t :: %__MODULE__{
-    :rank => integer() | nil,
-    :school => String.t | nil,
-    :conference => String.t | nil,
-    :firstPlaceVotes => integer() | nil,
-    :points => integer() | nil
-  }
+          :rank => integer() | nil,
+          :school => String.t() | nil,
+          :conference => String.t() | nil,
+          :firstPlaceVotes => integer() | nil,
+          :points => integer() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.RankingWeekPollsInnerRanksInner do
@@ -29,4 +29,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.RankingWeekPollsInnerRanksInner do
     value
   end
 end
-

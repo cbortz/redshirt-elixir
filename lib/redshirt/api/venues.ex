@@ -23,7 +23,8 @@ defmodule Redshirt.Api.Venues do
   - `{:ok, [%Venue{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_venues(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.Venue.t)} | {:error, Tesla.Env.t}
+  @spec get_venues(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.Venue.t())} | {:error, Tesla.Env.t()}
   def get_venues(connection, _opts \\ []) do
     request =
       %{}

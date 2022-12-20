@@ -34,9 +34,12 @@ defmodule Redshirt.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:tesla, "~> 1.4"},
+      {:credo, "~> 1.6", runtime: false, only: [:dev, :test]},
+      {:dialyxir, "~> 1.2", runtime: false, only: [:dev, :test]},
+      {:ex_doc, "~> 0.28", only: :dev, runtime: false},
+      {:mix_audit, "~> 2.0", runtime: false, only: [:dev, :test]},
       {:poison, "~> 3.0"},
-      {:ex_doc, "~> 0.28", only: :dev, runtime: false}
+      {:tesla, "~> 1.4"}
     ]
   end
 

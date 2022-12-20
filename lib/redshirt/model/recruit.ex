@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.Recruit do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -28,31 +28,31 @@ defmodule Redshirt.Model.Recruit do
   ]
 
   @type t :: %__MODULE__{
-    :id => integer() | nil,
-    :athleteId => integer() | nil,
-    :recruitType => String.t | nil,
-    :year => integer() | nil,
-    :ranking => integer() | nil,
-    :name => String.t | nil,
-    :school => String.t | nil,
-    :committedTo => String.t | nil,
-    :position => String.t | nil,
-    :height => float() | nil,
-    :weight => integer() | nil,
-    :stars => integer() | nil,
-    :rating => float() | nil,
-    :city => String.t | nil,
-    :stateProvince => String.t | nil,
-    :country => String.t | nil,
-    :hometownInfo => Redshirt.Model.RecruitHometownInfo.t | nil
-  }
+          :id => integer() | nil,
+          :athleteId => integer() | nil,
+          :recruitType => String.t() | nil,
+          :year => integer() | nil,
+          :ranking => integer() | nil,
+          :name => String.t() | nil,
+          :school => String.t() | nil,
+          :committedTo => String.t() | nil,
+          :position => String.t() | nil,
+          :height => float() | nil,
+          :weight => integer() | nil,
+          :stars => integer() | nil,
+          :rating => float() | nil,
+          :city => String.t() | nil,
+          :stateProvince => String.t() | nil,
+          :country => String.t() | nil,
+          :hometownInfo => Redshirt.Model.RecruitHometownInfo.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.Recruit do
   import Redshirt.Deserializer
+
   def decode(value, options) do
     value
     |> deserialize(:hometownInfo, :struct, Redshirt.Model.RecruitHometownInfo, options)
   end
 end
-

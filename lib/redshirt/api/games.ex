@@ -24,7 +24,8 @@ defmodule Redshirt.Api.Games do
   - `{:ok, Redshirt.Model.BoxScore.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_advanced_box_score(Tesla.Env.client, integer(), keyword()) :: {:ok, Redshirt.Model.BoxScore.t} | {:error, Tesla.Env.t}
+  @spec get_advanced_box_score(Tesla.Env.client(), integer(), keyword()) ::
+          {:ok, Redshirt.Model.BoxScore.t()} | {:error, Tesla.Env.t()}
   def get_advanced_box_score(connection, game_id, _opts \\ []) do
     request =
       %{}
@@ -55,7 +56,8 @@ defmodule Redshirt.Api.Games do
   - `{:ok, [%Week{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_calendar(Tesla.Env.client, integer(), keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.Week.t)} | {:error, Tesla.Env.t}
+  @spec get_calendar(Tesla.Env.client(), integer(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.Week.t())} | {:error, Tesla.Env.t()}
   def get_calendar(connection, year, _opts \\ []) do
     request =
       %{}
@@ -93,7 +95,8 @@ defmodule Redshirt.Api.Games do
   - `{:ok, [%GameMedia{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_game_media(Tesla.Env.client, integer(), keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.GameMedia.t)} | {:error, Tesla.Env.t}
+  @spec get_game_media(Tesla.Env.client(), integer(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.GameMedia.t())} | {:error, Tesla.Env.t()}
   def get_game_media(connection, year, opts \\ []) do
     optional_params = %{
       :week => :query,
@@ -141,7 +144,8 @@ defmodule Redshirt.Api.Games do
   - `{:ok, [%GameWeather{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_game_weather(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.GameWeather.t)} | {:error, Tesla.Env.t}
+  @spec get_game_weather(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.GameWeather.t())} | {:error, Tesla.Env.t()}
   def get_game_weather(connection, opts \\ []) do
     optional_params = %{
       :gameId => :query,
@@ -191,7 +195,8 @@ defmodule Redshirt.Api.Games do
   - `{:ok, [%Game{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_games(Tesla.Env.client, integer(), keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.Game.t)} | {:error, Tesla.Env.t}
+  @spec get_games(Tesla.Env.client(), integer(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.Game.t())} | {:error, Tesla.Env.t()}
   def get_games(connection, year, opts \\ []) do
     optional_params = %{
       :week => :query,
@@ -241,7 +246,8 @@ defmodule Redshirt.Api.Games do
   - `{:ok, [%PlayerGame{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_player_game_stats(Tesla.Env.client, integer(), keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.PlayerGame.t)} | {:error, Tesla.Env.t}
+  @spec get_player_game_stats(Tesla.Env.client(), integer(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.PlayerGame.t())} | {:error, Tesla.Env.t()}
   def get_player_game_stats(connection, year, opts \\ []) do
     optional_params = %{
       :week => :query,
@@ -284,7 +290,8 @@ defmodule Redshirt.Api.Games do
   - `{:ok, [%ScoreboardGame{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_scoreboard(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.ScoreboardGame.t)} | {:error, Tesla.Env.t}
+  @spec get_scoreboard(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.ScoreboardGame.t())} | {:error, Tesla.Env.t()}
   def get_scoreboard(connection, opts \\ []) do
     optional_params = %{
       :classification => :query,
@@ -327,7 +334,8 @@ defmodule Redshirt.Api.Games do
   - `{:ok, [%TeamGame{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_team_game_stats(Tesla.Env.client, integer(), keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.TeamGame.t)} | {:error, Tesla.Env.t}
+  @spec get_team_game_stats(Tesla.Env.client(), integer(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.TeamGame.t())} | {:error, Tesla.Env.t()}
   def get_team_game_stats(connection, year, opts \\ []) do
     optional_params = %{
       :week => :query,
@@ -371,7 +379,8 @@ defmodule Redshirt.Api.Games do
   - `{:ok, [%TeamRecord{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_team_records(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.TeamRecord.t)} | {:error, Tesla.Env.t}
+  @spec get_team_records(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.TeamRecord.t())} | {:error, Tesla.Env.t()}
   def get_team_records(connection, opts \\ []) do
     optional_params = %{
       :year => :query,

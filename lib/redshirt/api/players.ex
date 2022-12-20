@@ -30,7 +30,8 @@ defmodule Redshirt.Api.Players do
   - `{:ok, [%PlayerSeasonStat{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_player_season_stats(Tesla.Env.client, integer(), keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.PlayerSeasonStat.t)} | {:error, Tesla.Env.t}
+  @spec get_player_season_stats(Tesla.Env.client(), integer(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.PlayerSeasonStat.t())} | {:error, Tesla.Env.t()}
   def get_player_season_stats(connection, year, opts \\ []) do
     optional_params = %{
       :team => :query,
@@ -77,7 +78,8 @@ defmodule Redshirt.Api.Players do
   - `{:ok, [%PlayerUsage{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_player_usage(Tesla.Env.client, integer(), keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.PlayerUsage.t)} | {:error, Tesla.Env.t}
+  @spec get_player_usage(Tesla.Env.client(), integer(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.PlayerUsage.t())} | {:error, Tesla.Env.t()}
   def get_player_usage(connection, year, opts \\ []) do
     optional_params = %{
       :team => :query,
@@ -120,7 +122,10 @@ defmodule Redshirt.Api.Players do
   - `{:ok, [%ReturningProduction{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_returning_production(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.ReturningProduction.t)} | {:error, Tesla.Env.t}
+  @spec get_returning_production(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, list(Redshirt.Model.ReturningProduction.t())}
+          | {:error, Tesla.Env.t()}
   def get_returning_production(connection, opts \\ []) do
     optional_params = %{
       :year => :query,
@@ -158,7 +163,8 @@ defmodule Redshirt.Api.Players do
   - `{:ok, [%PortalPlayer{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_transfer_portal(Tesla.Env.client, integer(), keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.PortalPlayer.t)} | {:error, Tesla.Env.t}
+  @spec get_transfer_portal(Tesla.Env.client(), integer(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.PortalPlayer.t())} | {:error, Tesla.Env.t()}
   def get_transfer_portal(connection, year, _opts \\ []) do
     request =
       %{}
@@ -193,7 +199,10 @@ defmodule Redshirt.Api.Players do
   - `{:ok, [%PlayerSearchResult{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec player_search(Tesla.Env.client, String.t, keyword()) :: {:ok, list(Redshirt.Model.PlayerSearchResult.t)} | {:ok, nil} | {:error, Tesla.Env.t}
+  @spec player_search(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, list(Redshirt.Model.PlayerSearchResult.t())}
+          | {:ok, nil}
+          | {:error, Tesla.Env.t()}
   def player_search(connection, search_term, opts \\ []) do
     optional_params = %{
       :position => :query,

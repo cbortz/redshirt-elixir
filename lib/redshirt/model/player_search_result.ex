@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.PlayerSearchResult do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -23,19 +23,19 @@ defmodule Redshirt.Model.PlayerSearchResult do
   ]
 
   @type t :: %__MODULE__{
-    :id => integer() | nil,
-    :team => String.t | nil,
-    :name => String.t | nil,
-    :firstName => String.t | nil,
-    :lastName => String.t | nil,
-    :weight => integer() | nil,
-    :height => integer() | nil,
-    :jersey => integer() | nil,
-    :position => String.t | nil,
-    :hometown => String.t | nil,
-    :teamColor => String.t | nil,
-    :teamColorSecondary => String.t | nil
-  }
+          :id => integer() | nil,
+          :team => String.t() | nil,
+          :name => String.t() | nil,
+          :firstName => String.t() | nil,
+          :lastName => String.t() | nil,
+          :weight => integer() | nil,
+          :height => integer() | nil,
+          :jersey => integer() | nil,
+          :position => String.t() | nil,
+          :hometown => String.t() | nil,
+          :teamColor => String.t() | nil,
+          :teamColorSecondary => String.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.PlayerSearchResult do
@@ -43,4 +43,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.PlayerSearchResult do
     value
   end
 end
-

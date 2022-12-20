@@ -26,7 +26,8 @@ defmodule Redshirt.Api.Rankings do
   - `{:ok, [%RankingWeek{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_rankings(Tesla.Env.client, integer(), keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.RankingWeek.t)} | {:error, Tesla.Env.t}
+  @spec get_rankings(Tesla.Env.client(), integer(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.RankingWeek.t())} | {:error, Tesla.Env.t()}
   def get_rankings(connection, year, opts \\ []) do
     optional_params = %{
       :week => :query,

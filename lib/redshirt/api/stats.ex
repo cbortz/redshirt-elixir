@@ -29,7 +29,8 @@ defmodule Redshirt.Api.Stats do
   - `{:ok, [%AdvancedGameStat{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_advanced_team_game_stats(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.AdvancedGameStat.t)} | {:error, Tesla.Env.t}
+  @spec get_advanced_team_game_stats(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.AdvancedGameStat.t())} | {:error, Tesla.Env.t()}
   def get_advanced_team_game_stats(connection, opts \\ []) do
     optional_params = %{
       :year => :query,
@@ -74,7 +75,10 @@ defmodule Redshirt.Api.Stats do
   - `{:ok, [%AdvancedSeasonStat{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_advanced_team_season_stats(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.AdvancedSeasonStat.t)} | {:error, Tesla.Env.t}
+  @spec get_advanced_team_season_stats(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, list(Redshirt.Model.AdvancedSeasonStat.t())}
+          | {:error, Tesla.Env.t()}
   def get_advanced_team_season_stats(connection, opts \\ []) do
     optional_params = %{
       :year => :query,
@@ -113,7 +117,8 @@ defmodule Redshirt.Api.Stats do
   - `{:ok, [%String{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_stat_categories(Tesla.Env.client, keyword()) :: {:ok, list(String.t)} | {:error, Tesla.Env.t}
+  @spec get_stat_categories(Tesla.Env.client(), keyword()) ::
+          {:ok, list(String.t())} | {:error, Tesla.Env.t()}
   def get_stat_categories(connection, _opts \\ []) do
     request =
       %{}
@@ -147,7 +152,8 @@ defmodule Redshirt.Api.Stats do
   - `{:ok, [%TeamSeasonStat{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_team_season_stats(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.TeamSeasonStat.t)} | {:error, Tesla.Env.t}
+  @spec get_team_season_stats(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.TeamSeasonStat.t())} | {:error, Tesla.Env.t()}
   def get_team_season_stats(connection, opts \\ []) do
     optional_params = %{
       :year => :query,

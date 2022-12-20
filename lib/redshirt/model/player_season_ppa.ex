@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.PlayerSeasonPpa do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -19,23 +19,23 @@ defmodule Redshirt.Model.PlayerSeasonPpa do
   ]
 
   @type t :: %__MODULE__{
-    :season => integer() | nil,
-    :id => integer() | nil,
-    :name => String.t | nil,
-    :position => String.t | nil,
-    :team => String.t | nil,
-    :conference => String.t | nil,
-    :averagePPA => Redshirt.Model.PlayerSeasonPpaAveragePpa.t | nil,
-    :totalPPA => Redshirt.Model.PlayerSeasonPpaAveragePpa.t | nil
-  }
+          :season => integer() | nil,
+          :id => integer() | nil,
+          :name => String.t() | nil,
+          :position => String.t() | nil,
+          :team => String.t() | nil,
+          :conference => String.t() | nil,
+          :averagePPA => Redshirt.Model.PlayerSeasonPpaAveragePpa.t() | nil,
+          :totalPPA => Redshirt.Model.PlayerSeasonPpaAveragePpa.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.PlayerSeasonPpa do
   import Redshirt.Deserializer
+
   def decode(value, options) do
     value
     |> deserialize(:averagePPA, :struct, Redshirt.Model.PlayerSeasonPpaAveragePpa, options)
     |> deserialize(:totalPPA, :struct, Redshirt.Model.PlayerSeasonPpaAveragePpa, options)
   end
 end
-

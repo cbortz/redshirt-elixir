@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.TeamLocation do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -25,21 +25,21 @@ defmodule Redshirt.Model.TeamLocation do
   ]
 
   @type t :: %__MODULE__{
-    :venue_id => integer() | nil,
-    :name => String.t | nil,
-    :city => String.t | nil,
-    :state => String.t | nil,
-    :zip => String.t | nil,
-    :country_code => String.t | nil,
-    :timezone => String.t | nil,
-    :latitude => float() | nil,
-    :longitude => float() | nil,
-    :elevation => float() | nil,
-    :capacity => float() | nil,
-    :year_constructed => float() | nil,
-    :grass => boolean() | nil,
-    :dome => boolean() | nil
-  }
+          :venue_id => integer() | nil,
+          :name => String.t() | nil,
+          :city => String.t() | nil,
+          :state => String.t() | nil,
+          :zip => String.t() | nil,
+          :country_code => String.t() | nil,
+          :timezone => String.t() | nil,
+          :latitude => float() | nil,
+          :longitude => float() | nil,
+          :elevation => float() | nil,
+          :capacity => float() | nil,
+          :year_constructed => float() | nil,
+          :grass => boolean() | nil,
+          :dome => boolean() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.TeamLocation do
@@ -47,4 +47,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.TeamLocation do
     value
   end
 end
-

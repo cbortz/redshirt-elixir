@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.PlayStat do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -30,33 +30,33 @@ defmodule Redshirt.Model.PlayStat do
   ]
 
   @type t :: %__MODULE__{
-    :gameId => integer() | nil,
-    :season => integer() | nil,
-    :week => integer() | nil,
-    :team => String.t | nil,
-    :conference => String.t | nil,
-    :opponent => String.t | nil,
-    :teamScore => integer() | nil,
-    :opponentScore => integer() | nil,
-    :driveId => integer() | nil,
-    :playId => integer() | nil,
-    :period => integer() | nil,
-    :clock => Redshirt.Model.DriveStartTime.t | nil,
-    :yardsToGoal => integer() | nil,
-    :down => integer() | nil,
-    :distance => integer() | nil,
-    :athleteId => integer() | nil,
-    :athleteName => String.t | nil,
-    :statType => String.t | nil,
-    :stat => integer() | nil
-  }
+          :gameId => integer() | nil,
+          :season => integer() | nil,
+          :week => integer() | nil,
+          :team => String.t() | nil,
+          :conference => String.t() | nil,
+          :opponent => String.t() | nil,
+          :teamScore => integer() | nil,
+          :opponentScore => integer() | nil,
+          :driveId => integer() | nil,
+          :playId => integer() | nil,
+          :period => integer() | nil,
+          :clock => Redshirt.Model.DriveStartTime.t() | nil,
+          :yardsToGoal => integer() | nil,
+          :down => integer() | nil,
+          :distance => integer() | nil,
+          :athleteId => integer() | nil,
+          :athleteName => String.t() | nil,
+          :statType => String.t() | nil,
+          :stat => integer() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.PlayStat do
   import Redshirt.Deserializer
+
   def decode(value, options) do
     value
     |> deserialize(:clock, :struct, Redshirt.Model.DriveStartTime, options)
   end
 end
-

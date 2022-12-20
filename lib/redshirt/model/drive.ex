@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.Drive do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -35,39 +35,39 @@ defmodule Redshirt.Model.Drive do
   ]
 
   @type t :: %__MODULE__{
-    :offense => String.t | nil,
-    :offense_conference => String.t | nil,
-    :defense => String.t | nil,
-    :defense_conference => String.t | nil,
-    :game_id => integer() | nil,
-    :id => integer() | nil,
-    :drive_number => integer() | nil,
-    :scoring => boolean() | nil,
-    :start_period => integer() | nil,
-    :start_yardline => integer() | nil,
-    :start_yards_to_goal => integer() | nil,
-    :start_time => Redshirt.Model.DriveStartTime.t | nil,
-    :end_period => integer() | nil,
-    :end_yardline => integer() | nil,
-    :end_yards_to_goal => integer() | nil,
-    :end_time => Redshirt.Model.DriveStartTime.t | nil,
-    :plays => integer() | nil,
-    :yards => integer() | nil,
-    :drive_result => String.t | nil,
-    :is_home_offense => boolean() | nil,
-    :start_offense_score => integer() | nil,
-    :start_defense_score => integer() | nil,
-    :end_offense_score => integer() | nil,
-    :end_defense_score => integer() | nil
-  }
+          :offense => String.t() | nil,
+          :offense_conference => String.t() | nil,
+          :defense => String.t() | nil,
+          :defense_conference => String.t() | nil,
+          :game_id => integer() | nil,
+          :id => integer() | nil,
+          :drive_number => integer() | nil,
+          :scoring => boolean() | nil,
+          :start_period => integer() | nil,
+          :start_yardline => integer() | nil,
+          :start_yards_to_goal => integer() | nil,
+          :start_time => Redshirt.Model.DriveStartTime.t() | nil,
+          :end_period => integer() | nil,
+          :end_yardline => integer() | nil,
+          :end_yards_to_goal => integer() | nil,
+          :end_time => Redshirt.Model.DriveStartTime.t() | nil,
+          :plays => integer() | nil,
+          :yards => integer() | nil,
+          :drive_result => String.t() | nil,
+          :is_home_offense => boolean() | nil,
+          :start_offense_score => integer() | nil,
+          :start_defense_score => integer() | nil,
+          :end_offense_score => integer() | nil,
+          :end_defense_score => integer() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.Drive do
   import Redshirt.Deserializer
+
   def decode(value, options) do
     value
     |> deserialize(:start_time, :struct, Redshirt.Model.DriveStartTime, options)
     |> deserialize(:end_time, :struct, Redshirt.Model.DriveStartTime, options)
   end
 end
-

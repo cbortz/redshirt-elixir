@@ -24,7 +24,8 @@ defmodule Redshirt.Api.Plays do
   - `{:ok, Redshirt.Model.LivePlayByPlay.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_live_plays(Tesla.Env.client, integer(), keyword()) :: {:ok, Redshirt.Model.LivePlayByPlay.t} | {:error, Tesla.Env.t}
+  @spec get_live_plays(Tesla.Env.client(), integer(), keyword()) ::
+          {:ok, Redshirt.Model.LivePlayByPlay.t()} | {:error, Tesla.Env.t()}
   def get_live_plays(connection, id, _opts \\ []) do
     request =
       %{}
@@ -54,7 +55,8 @@ defmodule Redshirt.Api.Plays do
   - `{:ok, [%PlayStatType{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_play_stat_types(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.PlayStatType.t)} | {:error, Tesla.Env.t}
+  @spec get_play_stat_types(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.PlayStatType.t())} | {:error, Tesla.Env.t()}
   def get_play_stat_types(connection, _opts \\ []) do
     request =
       %{}
@@ -92,7 +94,8 @@ defmodule Redshirt.Api.Plays do
   - `{:ok, [%PlayStat{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_play_stats(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.PlayStat.t)} | {:error, Tesla.Env.t}
+  @spec get_play_stats(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.PlayStat.t())} | {:error, Tesla.Env.t()}
   def get_play_stats(connection, opts \\ []) do
     optional_params = %{
       :year => :query,
@@ -134,7 +137,8 @@ defmodule Redshirt.Api.Plays do
   - `{:ok, [%PlayType{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_play_types(Tesla.Env.client, keyword()) :: {:ok, list(Redshirt.Model.PlayType.t)} | {:error, Tesla.Env.t}
+  @spec get_play_types(Tesla.Env.client(), keyword()) ::
+          {:ok, list(Redshirt.Model.PlayType.t())} | {:error, Tesla.Env.t()}
   def get_play_types(connection, _opts \\ []) do
     request =
       %{}
@@ -174,7 +178,8 @@ defmodule Redshirt.Api.Plays do
   - `{:ok, [%Play{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_plays(Tesla.Env.client, integer(), integer(), keyword()) :: {:ok, list(Redshirt.Model.Play.t)} | {:error, Tesla.Env.t}
+  @spec get_plays(Tesla.Env.client(), integer(), integer(), keyword()) ::
+          {:ok, list(Redshirt.Model.Play.t())} | {:error, Tesla.Env.t()}
   def get_plays(connection, year, week, opts \\ []) do
     optional_params = %{
       :seasonType => :query,

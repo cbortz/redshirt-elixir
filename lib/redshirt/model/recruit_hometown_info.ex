@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.RecruitHometownInfo do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -14,10 +14,10 @@ defmodule Redshirt.Model.RecruitHometownInfo do
   ]
 
   @type t :: %__MODULE__{
-    :latitude => float() | nil,
-    :longitude => float() | nil,
-    :countyFips => String.t | nil
-  }
+          :latitude => float() | nil,
+          :longitude => float() | nil,
+          :countyFips => String.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.RecruitHometownInfo do
@@ -25,4 +25,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.RecruitHometownInfo do
     value
   end
 end
-

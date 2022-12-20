@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.DraftPickHometownInfo do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -17,13 +17,13 @@ defmodule Redshirt.Model.DraftPickHometownInfo do
   ]
 
   @type t :: %__MODULE__{
-    :city => String.t | nil,
-    :state => String.t | nil,
-    :country => String.t | nil,
-    :latitude => float() | nil,
-    :longitude => float() | nil,
-    :countryFips => integer() | nil
-  }
+          :city => String.t() | nil,
+          :state => String.t() | nil,
+          :country => String.t() | nil,
+          :latitude => float() | nil,
+          :longitude => float() | nil,
+          :countryFips => integer() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.DraftPickHometownInfo do
@@ -31,4 +31,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.DraftPickHometownInfo do
     value
   end
 end
-

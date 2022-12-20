@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.Conference do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -16,12 +16,12 @@ defmodule Redshirt.Model.Conference do
   ]
 
   @type t :: %__MODULE__{
-    :id => integer() | nil,
-    :name => String.t | nil,
-    :short_name => String.t | nil,
-    :abbreviation => String.t | nil,
-    :classification => String.t | nil
-  }
+          :id => integer() | nil,
+          :name => String.t() | nil,
+          :short_name => String.t() | nil,
+          :abbreviation => String.t() | nil,
+          :classification => String.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.Conference do
@@ -29,4 +29,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.Conference do
     value
   end
 end
-

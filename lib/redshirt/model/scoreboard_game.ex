@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.ScoreboardGame do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -27,27 +27,28 @@ defmodule Redshirt.Model.ScoreboardGame do
   ]
 
   @type t :: %__MODULE__{
-    :id => integer() | nil,
-    :startDate => String.t | nil,
-    :startTimeTBD => boolean() | nil,
-    :tv => String.t | nil,
-    :neutralSite => boolean() | nil,
-    :conferenceGame => boolean() | nil,
-    :status => String.t | nil,
-    :period => integer() | nil,
-    :clock => String.t | nil,
-    :situation => String.t | nil,
-    :possession => String.t | nil,
-    :venue => Redshirt.Model.ScoreboardGameVenue.t | nil,
-    :homeTeam => Redshirt.Model.ScoreboardGameHomeTeam.t | nil,
-    :awayTeam => Redshirt.Model.ScoreboardGameHomeTeam.t | nil,
-    :weather => Redshirt.Model.ScoreboardGameWeather.t | nil,
-    :betting => Redshirt.Model.ScoreboardGameBetting.t | nil
-  }
+          :id => integer() | nil,
+          :startDate => String.t() | nil,
+          :startTimeTBD => boolean() | nil,
+          :tv => String.t() | nil,
+          :neutralSite => boolean() | nil,
+          :conferenceGame => boolean() | nil,
+          :status => String.t() | nil,
+          :period => integer() | nil,
+          :clock => String.t() | nil,
+          :situation => String.t() | nil,
+          :possession => String.t() | nil,
+          :venue => Redshirt.Model.ScoreboardGameVenue.t() | nil,
+          :homeTeam => Redshirt.Model.ScoreboardGameHomeTeam.t() | nil,
+          :awayTeam => Redshirt.Model.ScoreboardGameHomeTeam.t() | nil,
+          :weather => Redshirt.Model.ScoreboardGameWeather.t() | nil,
+          :betting => Redshirt.Model.ScoreboardGameBetting.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.ScoreboardGame do
   import Redshirt.Deserializer
+
   def decode(value, options) do
     value
     |> deserialize(:venue, :struct, Redshirt.Model.ScoreboardGameVenue, options)
@@ -57,4 +58,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.ScoreboardGame do
     |> deserialize(:betting, :struct, Redshirt.Model.ScoreboardGameBetting, options)
   end
 end
-

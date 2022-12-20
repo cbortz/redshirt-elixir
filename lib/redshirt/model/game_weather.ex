@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.GameWeather do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -33,29 +33,29 @@ defmodule Redshirt.Model.GameWeather do
   ]
 
   @type t :: %__MODULE__{
-    :id => integer() | nil,
-    :season => integer() | nil,
-    :week => integer() | nil,
-    :seasonType => String.t | nil,
-    :startTime => String.t | nil,
-    :gameIndoors => boolean() | nil,
-    :homeTeam => String.t | nil,
-    :homeConference => String.t | nil,
-    :awayTeam => String.t | nil,
-    :awayConference => String.t | nil,
-    :venueId => integer() | nil,
-    :venue => String.t | nil,
-    :temperature => float() | nil,
-    :dewPoint => float() | nil,
-    :humidity => float() | nil,
-    :precipitation => float() | nil,
-    :snowfall => float() | nil,
-    :windDirection => float() | nil,
-    :windSpeed => float() | nil,
-    :pressure => float() | nil,
-    :weatherConditionCode => integer() | nil,
-    :weatherCondition => String.t | nil
-  }
+          :id => integer() | nil,
+          :season => integer() | nil,
+          :week => integer() | nil,
+          :seasonType => String.t() | nil,
+          :startTime => String.t() | nil,
+          :gameIndoors => boolean() | nil,
+          :homeTeam => String.t() | nil,
+          :homeConference => String.t() | nil,
+          :awayTeam => String.t() | nil,
+          :awayConference => String.t() | nil,
+          :venueId => integer() | nil,
+          :venue => String.t() | nil,
+          :temperature => float() | nil,
+          :dewPoint => float() | nil,
+          :humidity => float() | nil,
+          :precipitation => float() | nil,
+          :snowfall => float() | nil,
+          :windDirection => float() | nil,
+          :windSpeed => float() | nil,
+          :pressure => float() | nil,
+          :weatherConditionCode => integer() | nil,
+          :weatherCondition => String.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.GameWeather do
@@ -63,4 +63,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.GameWeather do
     value
   end
 end
-

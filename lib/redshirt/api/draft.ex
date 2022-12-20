@@ -28,7 +28,8 @@ defmodule Redshirt.Api.Draft do
   - `{:ok, [%DraftPick{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_draft_picks(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.DraftPick.t)} | {:error, Tesla.Env.t}
+  @spec get_draft_picks(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.DraftPick.t())} | {:error, Tesla.Env.t()}
   def get_draft_picks(connection, opts \\ []) do
     optional_params = %{
       :year => :query,
@@ -67,7 +68,8 @@ defmodule Redshirt.Api.Draft do
   - `{:ok, [%DraftPosition{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_nfl_positions(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.DraftPosition.t)} | {:error, Tesla.Env.t}
+  @spec get_nfl_positions(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.DraftPosition.t())} | {:error, Tesla.Env.t()}
   def get_nfl_positions(connection, _opts \\ []) do
     request =
       %{}
@@ -97,7 +99,8 @@ defmodule Redshirt.Api.Draft do
   - `{:ok, [%DraftTeam{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_nfl_teams(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.DraftTeam.t)} | {:error, Tesla.Env.t}
+  @spec get_nfl_teams(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.DraftTeam.t())} | {:error, Tesla.Env.t()}
   def get_nfl_teams(connection, _opts \\ []) do
     request =
       %{}

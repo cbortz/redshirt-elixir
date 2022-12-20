@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.DraftTeam do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -15,11 +15,11 @@ defmodule Redshirt.Model.DraftTeam do
   ]
 
   @type t :: %__MODULE__{
-    :location => String.t | nil,
-    :nickname => String.t | nil,
-    :displayName => String.t | nil,
-    :logo => String.t | nil
-  }
+          :location => String.t() | nil,
+          :nickname => String.t() | nil,
+          :displayName => String.t() | nil,
+          :logo => String.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.DraftTeam do
@@ -27,4 +27,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.DraftTeam do
     value
   end
 end
-

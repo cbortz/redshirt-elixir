@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.PortalPlayer do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -21,17 +21,17 @@ defmodule Redshirt.Model.PortalPlayer do
   ]
 
   @type t :: %__MODULE__{
-    :season => integer() | nil,
-    :firstName => String.t | nil,
-    :lastName => String.t | nil,
-    :position => String.t | nil,
-    :origin => String.t | nil,
-    :destination => String.t | nil,
-    :transferDate => String.t | nil,
-    :rating => float() | nil,
-    :stars => integer() | nil,
-    :eligibility => String.t | nil
-  }
+          :season => integer() | nil,
+          :firstName => String.t() | nil,
+          :lastName => String.t() | nil,
+          :position => String.t() | nil,
+          :origin => String.t() | nil,
+          :destination => String.t() | nil,
+          :transferDate => String.t() | nil,
+          :rating => float() | nil,
+          :stars => integer() | nil,
+          :eligibility => String.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.PortalPlayer do
@@ -39,4 +39,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.PortalPlayer do
     value
   end
 end
-

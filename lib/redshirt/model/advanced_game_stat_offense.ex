@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.AdvancedGameStatOffense do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -29,35 +29,55 @@ defmodule Redshirt.Model.AdvancedGameStatOffense do
   ]
 
   @type t :: %__MODULE__{
-    :plays => integer() | nil,
-    :drives => integer() | nil,
-    :ppa => float() | nil,
-    :totalPPA => float() | nil,
-    :successRate => float() | nil,
-    :explosiveness => float() | nil,
-    :powerSuccess => float() | nil,
-    :stuffRate => float() | nil,
-    :lineYards => float() | nil,
-    :lineYardsTotal => float() | nil,
-    :secondLevelYards => float() | nil,
-    :secondLevelYardsTotal => integer() | nil,
-    :openFieldYards => float() | nil,
-    :openFieldYardsTotal => integer() | nil,
-    :standardDowns => Redshirt.Model.AdvancedGameStatOffenseStandardDowns.t | nil,
-    :passingDowns => Redshirt.Model.AdvancedGameStatOffenseStandardDowns.t | nil,
-    :rushingPlays => Redshirt.Model.AdvancedGameStatOffenseRushingPlays.t | nil,
-    :passingPlays => Redshirt.Model.AdvancedGameStatOffenseRushingPlays.t | nil
-  }
+          :plays => integer() | nil,
+          :drives => integer() | nil,
+          :ppa => float() | nil,
+          :totalPPA => float() | nil,
+          :successRate => float() | nil,
+          :explosiveness => float() | nil,
+          :powerSuccess => float() | nil,
+          :stuffRate => float() | nil,
+          :lineYards => float() | nil,
+          :lineYardsTotal => float() | nil,
+          :secondLevelYards => float() | nil,
+          :secondLevelYardsTotal => integer() | nil,
+          :openFieldYards => float() | nil,
+          :openFieldYardsTotal => integer() | nil,
+          :standardDowns => Redshirt.Model.AdvancedGameStatOffenseStandardDowns.t() | nil,
+          :passingDowns => Redshirt.Model.AdvancedGameStatOffenseStandardDowns.t() | nil,
+          :rushingPlays => Redshirt.Model.AdvancedGameStatOffenseRushingPlays.t() | nil,
+          :passingPlays => Redshirt.Model.AdvancedGameStatOffenseRushingPlays.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.AdvancedGameStatOffense do
   import Redshirt.Deserializer
+
   def decode(value, options) do
     value
-    |> deserialize(:standardDowns, :struct, Redshirt.Model.AdvancedGameStatOffenseStandardDowns, options)
-    |> deserialize(:passingDowns, :struct, Redshirt.Model.AdvancedGameStatOffenseStandardDowns, options)
-    |> deserialize(:rushingPlays, :struct, Redshirt.Model.AdvancedGameStatOffenseRushingPlays, options)
-    |> deserialize(:passingPlays, :struct, Redshirt.Model.AdvancedGameStatOffenseRushingPlays, options)
+    |> deserialize(
+      :standardDowns,
+      :struct,
+      Redshirt.Model.AdvancedGameStatOffenseStandardDowns,
+      options
+    )
+    |> deserialize(
+      :passingDowns,
+      :struct,
+      Redshirt.Model.AdvancedGameStatOffenseStandardDowns,
+      options
+    )
+    |> deserialize(
+      :rushingPlays,
+      :struct,
+      Redshirt.Model.AdvancedGameStatOffenseRushingPlays,
+      options
+    )
+    |> deserialize(
+      :passingPlays,
+      :struct,
+      Redshirt.Model.AdvancedGameStatOffenseRushingPlays,
+      options
+    )
   end
 end
-

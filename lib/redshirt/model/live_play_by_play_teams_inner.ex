@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.LivePlayByPlayTeamsInner do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -35,31 +35,31 @@ defmodule Redshirt.Model.LivePlayByPlayTeamsInner do
   ]
 
   @type t :: %__MODULE__{
-    :teamId => integer() | nil,
-    :team => String.t | nil,
-    :homeAway => String.t | nil,
-    :points => integer() | nil,
-    :drives => integer() | nil,
-    :scoringOpportunities => integer() | nil,
-    :pointsPerOpportunity => float() | nil,
-    :plays => integer() | nil,
-    :lineYards => integer() | nil,
-    :lineYardsPerRush => float() | nil,
-    :secondLevelYards => integer() | nil,
-    :secondLevelYardsPerRush => float() | nil,
-    :openFieldYards => integer() | nil,
-    :openFieldYardsPerRush => float() | nil,
-    :epaPerPlay => float() | nil,
-    :totalEpa => float() | nil,
-    :passingEpa => float() | nil,
-    :epaPerPass => float() | nil,
-    :rushingEpa => float() | nil,
-    :epaPerRush => float() | nil,
-    :successRate => float() | nil,
-    :standardDownSuccessRate => float() | nil,
-    :passingDownSuccessRate => float() | nil,
-    :explosiveness => float() | nil
-  }
+          :teamId => integer() | nil,
+          :team => String.t() | nil,
+          :homeAway => String.t() | nil,
+          :points => integer() | nil,
+          :drives => integer() | nil,
+          :scoringOpportunities => integer() | nil,
+          :pointsPerOpportunity => float() | nil,
+          :plays => integer() | nil,
+          :lineYards => integer() | nil,
+          :lineYardsPerRush => float() | nil,
+          :secondLevelYards => integer() | nil,
+          :secondLevelYardsPerRush => float() | nil,
+          :openFieldYards => integer() | nil,
+          :openFieldYardsPerRush => float() | nil,
+          :epaPerPlay => float() | nil,
+          :totalEpa => float() | nil,
+          :passingEpa => float() | nil,
+          :epaPerPass => float() | nil,
+          :rushingEpa => float() | nil,
+          :epaPerRush => float() | nil,
+          :successRate => float() | nil,
+          :standardDownSuccessRate => float() | nil,
+          :passingDownSuccessRate => float() | nil,
+          :explosiveness => float() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.LivePlayByPlayTeamsInner do
@@ -67,4 +67,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.LivePlayByPlayTeamsInner do
     value
   end
 end
-

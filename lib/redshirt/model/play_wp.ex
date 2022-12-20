@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.PlayWp do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -28,24 +28,24 @@ defmodule Redshirt.Model.PlayWp do
   ]
 
   @type t :: %__MODULE__{
-    :gamesId => integer() | nil,
-    :playId => integer() | nil,
-    :playText => String.t | nil,
-    :homeId => integer() | nil,
-    :home => String.t | nil,
-    :awayId => integer() | nil,
-    :away => String.t | nil,
-    :spread => float() | nil,
-    :homeBall => boolean() | nil,
-    :homeScore => integer() | nil,
-    :awayScore => integer() | nil,
-    :timeRemaining => integer() | nil,
-    :yardLine => integer() | nil,
-    :down => integer() | nil,
-    :distance => integer() | nil,
-    :homeWinProb => float() | nil,
-    :playNumber => integer() | nil
-  }
+          :gamesId => integer() | nil,
+          :playId => integer() | nil,
+          :playText => String.t() | nil,
+          :homeId => integer() | nil,
+          :home => String.t() | nil,
+          :awayId => integer() | nil,
+          :away => String.t() | nil,
+          :spread => float() | nil,
+          :homeBall => boolean() | nil,
+          :homeScore => integer() | nil,
+          :awayScore => integer() | nil,
+          :timeRemaining => integer() | nil,
+          :yardLine => integer() | nil,
+          :down => integer() | nil,
+          :distance => integer() | nil,
+          :homeWinProb => float() | nil,
+          :playNumber => integer() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.PlayWp do
@@ -53,4 +53,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.PlayWp do
     value
   end
 end
-

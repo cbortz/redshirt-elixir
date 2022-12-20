@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.PredictedPoints do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -13,9 +13,9 @@ defmodule Redshirt.Model.PredictedPoints do
   ]
 
   @type t :: %__MODULE__{
-    :yardLine => integer() | nil,
-    :predictedPoints => float() | nil
-  }
+          :yardLine => integer() | nil,
+          :predictedPoints => float() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.PredictedPoints do
@@ -23,4 +23,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.PredictedPoints do
     value
   end
 end
-

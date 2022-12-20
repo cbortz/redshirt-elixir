@@ -24,7 +24,8 @@ defmodule Redshirt.Api.Teams do
   - `{:ok, [%Team{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_fbs_teams(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.Team.t)} | {:error, Tesla.Env.t}
+  @spec get_fbs_teams(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.Team.t())} | {:error, Tesla.Env.t()}
   def get_fbs_teams(connection, opts \\ []) do
     optional_params = %{
       :year => :query
@@ -61,7 +62,8 @@ defmodule Redshirt.Api.Teams do
   - `{:ok, [%Player{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_roster(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.Player.t)} | {:error, Tesla.Env.t}
+  @spec get_roster(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.Player.t())} | {:error, Tesla.Env.t()}
   def get_roster(connection, opts \\ []) do
     optional_params = %{
       :team => :query,
@@ -98,7 +100,8 @@ defmodule Redshirt.Api.Teams do
   - `{:ok, [%TeamTalent{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_talent(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.TeamTalent.t)} | {:error, Tesla.Env.t}
+  @spec get_talent(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.TeamTalent.t())} | {:error, Tesla.Env.t()}
   def get_talent(connection, opts \\ []) do
     optional_params = %{
       :year => :query
@@ -137,7 +140,8 @@ defmodule Redshirt.Api.Teams do
   - `{:ok, Redshirt.Model.TeamMatchup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_team_matchup(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, Redshirt.Model.TeamMatchup.t} | {:error, Tesla.Env.t}
+  @spec get_team_matchup(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil} | {:ok, Redshirt.Model.TeamMatchup.t()} | {:error, Tesla.Env.t()}
   def get_team_matchup(connection, team1, team2, opts \\ []) do
     optional_params = %{
       :minYear => :query,
@@ -176,7 +180,8 @@ defmodule Redshirt.Api.Teams do
   - `{:ok, [%Team{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_teams(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.Team.t)} | {:error, Tesla.Env.t}
+  @spec get_teams(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.Team.t())} | {:error, Tesla.Env.t()}
   def get_teams(connection, opts \\ []) do
     optional_params = %{
       :conference => :query

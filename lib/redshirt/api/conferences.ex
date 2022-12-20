@@ -23,7 +23,8 @@ defmodule Redshirt.Api.Conferences do
   - `{:ok, [%Conference{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_conferences(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.Conference.t)} | {:error, Tesla.Env.t}
+  @spec get_conferences(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.Conference.t())} | {:error, Tesla.Env.t()}
   def get_conferences(connection, _opts \\ []) do
     request =
       %{}

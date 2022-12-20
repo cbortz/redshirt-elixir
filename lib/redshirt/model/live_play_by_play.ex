@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.LivePlayByPlay do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -21,25 +21,25 @@ defmodule Redshirt.Model.LivePlayByPlay do
   ]
 
   @type t :: %__MODULE__{
-    :id => integer() | nil,
-    :status => String.t | nil,
-    :period => integer() | nil,
-    :clock => String.t | nil,
-    :possession => String.t | nil,
-    :down => integer() | nil,
-    :distance => integer() | nil,
-    :yardsToGoal => integer() | nil,
-    :teams => [Redshirt.Model.LivePlayByPlayTeamsInner.t] | nil,
-    :drives => [Redshirt.Model.LivePlayByPlayDrivesInner.t] | nil
-  }
+          :id => integer() | nil,
+          :status => String.t() | nil,
+          :period => integer() | nil,
+          :clock => String.t() | nil,
+          :possession => String.t() | nil,
+          :down => integer() | nil,
+          :distance => integer() | nil,
+          :yardsToGoal => integer() | nil,
+          :teams => [Redshirt.Model.LivePlayByPlayTeamsInner.t()] | nil,
+          :drives => [Redshirt.Model.LivePlayByPlayDrivesInner.t()] | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.LivePlayByPlay do
   import Redshirt.Deserializer
+
   def decode(value, options) do
     value
     |> deserialize(:teams, :list, Redshirt.Model.LivePlayByPlayTeamsInner, options)
     |> deserialize(:drives, :list, Redshirt.Model.LivePlayByPlayDrivesInner, options)
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.LivePlayByPlayDrivesInnerPlaysInner do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -31,27 +31,27 @@ defmodule Redshirt.Model.LivePlayByPlayDrivesInnerPlaysInner do
   ]
 
   @type t :: %__MODULE__{
-    :id => integer() | nil,
-    :homeScore => integer() | nil,
-    :awayScore => integer() | nil,
-    :period => integer() | nil,
-    :clock => String.t | nil,
-    :wallclock => String.t | nil,
-    :teamId => integer() | nil,
-    :team => String.t | nil,
-    :down => integer() | nil,
-    :distance => integer() | nil,
-    :yardsToGoal => integer() | nil,
-    :yardsGained => integer() | nil,
-    :playTypeId => integer() | nil,
-    :playType => String.t | nil,
-    :epa => float() | nil,
-    :garbageTime => boolean() | nil,
-    :success => boolean() | nil,
-    :rushPass => String.t | nil,
-    :downType => String.t | nil,
-    :playText => String.t | nil
-  }
+          :id => integer() | nil,
+          :homeScore => integer() | nil,
+          :awayScore => integer() | nil,
+          :period => integer() | nil,
+          :clock => String.t() | nil,
+          :wallclock => String.t() | nil,
+          :teamId => integer() | nil,
+          :team => String.t() | nil,
+          :down => integer() | nil,
+          :distance => integer() | nil,
+          :yardsToGoal => integer() | nil,
+          :yardsGained => integer() | nil,
+          :playTypeId => integer() | nil,
+          :playType => String.t() | nil,
+          :epa => float() | nil,
+          :garbageTime => boolean() | nil,
+          :success => boolean() | nil,
+          :rushPass => String.t() | nil,
+          :downType => String.t() | nil,
+          :playText => String.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.LivePlayByPlayDrivesInnerPlaysInner do
@@ -59,4 +59,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.LivePlayByPlayDrivesInnerPlaysInner 
     value
   end
 end
-

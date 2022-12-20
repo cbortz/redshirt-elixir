@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.RankingWeekPollsInner do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -13,16 +13,16 @@ defmodule Redshirt.Model.RankingWeekPollsInner do
   ]
 
   @type t :: %__MODULE__{
-    :poll => String.t | nil,
-    :ranks => [Redshirt.Model.RankingWeekPollsInnerRanksInner.t] | nil
-  }
+          :poll => String.t() | nil,
+          :ranks => [Redshirt.Model.RankingWeekPollsInnerRanksInner.t()] | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.RankingWeekPollsInner do
   import Redshirt.Deserializer
+
   def decode(value, options) do
     value
     |> deserialize(:ranks, :list, Redshirt.Model.RankingWeekPollsInnerRanksInner, options)
   end
 end
-

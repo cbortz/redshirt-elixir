@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.PlayerUsageUsage do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -19,15 +19,15 @@ defmodule Redshirt.Model.PlayerUsageUsage do
   ]
 
   @type t :: %__MODULE__{
-    :overall => float() | nil,
-    :pass => float() | nil,
-    :rush => float() | nil,
-    :firstDown => float() | nil,
-    :secondDown => float() | nil,
-    :thirdDown => float() | nil,
-    :standardDowns => float() | nil,
-    :passingDowns => float() | nil
-  }
+          :overall => float() | nil,
+          :pass => float() | nil,
+          :rush => float() | nil,
+          :firstDown => float() | nil,
+          :secondDown => float() | nil,
+          :thirdDown => float() | nil,
+          :standardDowns => float() | nil,
+          :passingDowns => float() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.PlayerUsageUsage do
@@ -35,4 +35,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.PlayerUsageUsage do
     value
   end
 end
-

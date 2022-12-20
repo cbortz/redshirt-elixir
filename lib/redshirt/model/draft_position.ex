@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.DraftPosition do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -13,9 +13,9 @@ defmodule Redshirt.Model.DraftPosition do
   ]
 
   @type t :: %__MODULE__{
-    :name => String.t | nil,
-    :abbreviation => String.t | nil
-  }
+          :name => String.t() | nil,
+          :abbreviation => String.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.DraftPosition do
@@ -23,4 +23,3 @@ defimpl Poison.Decoder, for: Redshirt.Model.DraftPosition do
     value
   end
 end
-

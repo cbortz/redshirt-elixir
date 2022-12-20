@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.AdvancedSeasonStatOffense do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -33,41 +33,66 @@ defmodule Redshirt.Model.AdvancedSeasonStatOffense do
   ]
 
   @type t :: %__MODULE__{
-    :plays => integer() | nil,
-    :drives => integer() | nil,
-    :ppa => float() | nil,
-    :totalPPA => float() | nil,
-    :successRate => float() | nil,
-    :explosiveness => float() | nil,
-    :powerSuccess => float() | nil,
-    :stuffRate => float() | nil,
-    :lineYards => float() | nil,
-    :lineYardsTotal => float() | nil,
-    :secondLevelYards => float() | nil,
-    :secondLevelYardsTotal => integer() | nil,
-    :openFieldYards => float() | nil,
-    :openFieldYardsTotal => integer() | nil,
-    :totalOpportunies => integer() | nil,
-    :pointsPerOpportunity => float() | nil,
-    :fieldPosition => Redshirt.Model.AdvancedSeasonStatOffenseFieldPosition.t | nil,
-    :havoc => Redshirt.Model.TeamSpRatingDefenseHavoc.t | nil,
-    :standardDowns => Redshirt.Model.AdvancedSeasonStatOffenseStandardDowns.t | nil,
-    :passingDowns => Redshirt.Model.AdvancedSeasonStatOffenseStandardDowns.t | nil,
-    :rushingPlays => Redshirt.Model.AdvancedSeasonStatOffenseRushingPlays.t | nil,
-    :passingPlays => Redshirt.Model.AdvancedSeasonStatOffenseRushingPlays.t | nil
-  }
+          :plays => integer() | nil,
+          :drives => integer() | nil,
+          :ppa => float() | nil,
+          :totalPPA => float() | nil,
+          :successRate => float() | nil,
+          :explosiveness => float() | nil,
+          :powerSuccess => float() | nil,
+          :stuffRate => float() | nil,
+          :lineYards => float() | nil,
+          :lineYardsTotal => float() | nil,
+          :secondLevelYards => float() | nil,
+          :secondLevelYardsTotal => integer() | nil,
+          :openFieldYards => float() | nil,
+          :openFieldYardsTotal => integer() | nil,
+          :totalOpportunies => integer() | nil,
+          :pointsPerOpportunity => float() | nil,
+          :fieldPosition => Redshirt.Model.AdvancedSeasonStatOffenseFieldPosition.t() | nil,
+          :havoc => Redshirt.Model.TeamSpRatingDefenseHavoc.t() | nil,
+          :standardDowns => Redshirt.Model.AdvancedSeasonStatOffenseStandardDowns.t() | nil,
+          :passingDowns => Redshirt.Model.AdvancedSeasonStatOffenseStandardDowns.t() | nil,
+          :rushingPlays => Redshirt.Model.AdvancedSeasonStatOffenseRushingPlays.t() | nil,
+          :passingPlays => Redshirt.Model.AdvancedSeasonStatOffenseRushingPlays.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.AdvancedSeasonStatOffense do
   import Redshirt.Deserializer
+
   def decode(value, options) do
     value
-    |> deserialize(:fieldPosition, :struct, Redshirt.Model.AdvancedSeasonStatOffenseFieldPosition, options)
+    |> deserialize(
+      :fieldPosition,
+      :struct,
+      Redshirt.Model.AdvancedSeasonStatOffenseFieldPosition,
+      options
+    )
     |> deserialize(:havoc, :struct, Redshirt.Model.TeamSpRatingDefenseHavoc, options)
-    |> deserialize(:standardDowns, :struct, Redshirt.Model.AdvancedSeasonStatOffenseStandardDowns, options)
-    |> deserialize(:passingDowns, :struct, Redshirt.Model.AdvancedSeasonStatOffenseStandardDowns, options)
-    |> deserialize(:rushingPlays, :struct, Redshirt.Model.AdvancedSeasonStatOffenseRushingPlays, options)
-    |> deserialize(:passingPlays, :struct, Redshirt.Model.AdvancedSeasonStatOffenseRushingPlays, options)
+    |> deserialize(
+      :standardDowns,
+      :struct,
+      Redshirt.Model.AdvancedSeasonStatOffenseStandardDowns,
+      options
+    )
+    |> deserialize(
+      :passingDowns,
+      :struct,
+      Redshirt.Model.AdvancedSeasonStatOffenseStandardDowns,
+      options
+    )
+    |> deserialize(
+      :rushingPlays,
+      :struct,
+      Redshirt.Model.AdvancedSeasonStatOffenseRushingPlays,
+      options
+    )
+    |> deserialize(
+      :passingPlays,
+      :struct,
+      Redshirt.Model.AdvancedSeasonStatOffenseRushingPlays,
+      options
+    )
   end
 end
-

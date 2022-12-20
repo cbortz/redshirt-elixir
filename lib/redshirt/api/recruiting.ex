@@ -27,7 +27,10 @@ defmodule Redshirt.Api.Recruiting do
   - `{:ok, [%PositionGroupRecruitingRating{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_recruiting_groups(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.PositionGroupRecruitingRating.t)} | {:error, Tesla.Env.t}
+  @spec get_recruiting_groups(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, list(Redshirt.Model.PositionGroupRecruitingRating.t())}
+          | {:error, Tesla.Env.t()}
   def get_recruiting_groups(connection, opts \\ []) do
     optional_params = %{
       :startYear => :query,
@@ -70,7 +73,8 @@ defmodule Redshirt.Api.Recruiting do
   - `{:ok, [%Recruit{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_recruiting_players(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.Recruit.t)} | {:error, Tesla.Env.t}
+  @spec get_recruiting_players(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.Recruit.t())} | {:error, Tesla.Env.t()}
   def get_recruiting_players(connection, opts \\ []) do
     optional_params = %{
       :year => :query,
@@ -111,7 +115,10 @@ defmodule Redshirt.Api.Recruiting do
   - `{:ok, [%TeamRecruitingRank{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_recruiting_teams(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.TeamRecruitingRank.t)} | {:error, Tesla.Env.t}
+  @spec get_recruiting_teams(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, list(Redshirt.Model.TeamRecruitingRank.t())}
+          | {:error, Tesla.Env.t()}
   def get_recruiting_teams(connection, opts \\ []) do
     optional_params = %{
       :year => :query,

@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.TeamPpaOffense do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -18,21 +18,21 @@ defmodule Redshirt.Model.TeamPpaOffense do
   ]
 
   @type t :: %__MODULE__{
-    :overall => float() | nil,
-    :passing => float() | nil,
-    :rushing => float() | nil,
-    :firstDown => float() | nil,
-    :secondDown => float() | nil,
-    :thirdDown => float() | nil,
-    :cumulative => Redshirt.Model.TeamPpaOffenseCumulative.t | nil
-  }
+          :overall => float() | nil,
+          :passing => float() | nil,
+          :rushing => float() | nil,
+          :firstDown => float() | nil,
+          :secondDown => float() | nil,
+          :thirdDown => float() | nil,
+          :cumulative => Redshirt.Model.TeamPpaOffenseCumulative.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.TeamPpaOffense do
   import Redshirt.Deserializer
+
   def decode(value, options) do
     value
     |> deserialize(:cumulative, :struct, Redshirt.Model.TeamPpaOffenseCumulative, options)
   end
 end
-

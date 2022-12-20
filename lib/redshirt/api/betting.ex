@@ -31,7 +31,8 @@ defmodule Redshirt.Api.Betting do
   - `{:ok, [%GameLines{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec get_lines(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, list(Redshirt.Model.GameLines.t)} | {:error, Tesla.Env.t}
+  @spec get_lines(Tesla.Env.client(), keyword()) ::
+          {:ok, nil} | {:ok, list(Redshirt.Model.GameLines.t())} | {:error, Tesla.Env.t()}
   def get_lines(connection, opts \\ []) do
     optional_params = %{
       :gameId => :query,

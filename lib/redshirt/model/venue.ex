@@ -3,7 +3,7 @@
 
 defmodule Redshirt.Model.Venue do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
@@ -24,27 +24,27 @@ defmodule Redshirt.Model.Venue do
   ]
 
   @type t :: %__MODULE__{
-    :id => integer() | nil,
-    :name => String.t | nil,
-    :capacity => integer() | nil,
-    :grass => boolean() | nil,
-    :city => String.t | nil,
-    :state => String.t | nil,
-    :zip => String.t | nil,
-    :country_code => String.t | nil,
-    :location => Redshirt.Model.VenueLocation.t | nil,
-    :elevation => float() | nil,
-    :year_constructed => integer() | nil,
-    :dome => boolean() | nil,
-    :timezone => String.t | nil
-  }
+          :id => integer() | nil,
+          :name => String.t() | nil,
+          :capacity => integer() | nil,
+          :grass => boolean() | nil,
+          :city => String.t() | nil,
+          :state => String.t() | nil,
+          :zip => String.t() | nil,
+          :country_code => String.t() | nil,
+          :location => Redshirt.Model.VenueLocation.t() | nil,
+          :elevation => float() | nil,
+          :year_constructed => integer() | nil,
+          :dome => boolean() | nil,
+          :timezone => String.t() | nil
+        }
 end
 
 defimpl Poison.Decoder, for: Redshirt.Model.Venue do
   import Redshirt.Deserializer
+
   def decode(value, options) do
     value
     |> deserialize(:location, :struct, Redshirt.Model.VenueLocation, options)
   end
 end
-
