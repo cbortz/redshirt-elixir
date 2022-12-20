@@ -23,7 +23,6 @@ defmodule Redshirt.Connection do
                       "https://api.collegefootballdata.com"
                     )
 
-
   @typedoc """
   The list of options that can be passed to new/1.
 
@@ -32,7 +31,7 @@ defmodule Redshirt.Connection do
   """
   @type options :: [
           {:base_url, String.t()},
-          {:user_agent, String.t()},
+          {:user_agent, String.t()}
         ]
 
   @doc "Forward requests to Tesla."
@@ -70,9 +69,6 @@ defmodule Redshirt.Connection do
     |> Tesla.client(adapter())
   end
 
-
-
-
   @doc """
   Returns fully configured middleware for passing to Tesla.client/2.
   """
@@ -83,6 +79,13 @@ defmodule Redshirt.Connection do
         options,
         :base_url,
         Application.get_env(:redshirt, :base_url, @default_base_url)
+      )
+
+    api_key =
+      Keyword.get(
+        options,
+        :api_key,
+        Application.get_env(:redshirt, :api_key)
       )
 
     tesla_options = Application.get_env(:tesla, __MODULE__, [])
@@ -100,16 +103,14 @@ defmodule Redshirt.Connection do
         )
       )
 
-
-
     [
       {Tesla.Middleware.BaseUrl, base_url},
       {Tesla.Middleware.Headers, [{"user-agent", user_agent}]},
+      {Tesla.Middleware.BearerAuth, token: api_key},
       {Tesla.Middleware.EncodeJson, engine: json_engine}
       | middleware
     ]
   end
-
 
   @doc """
   Returns the default adapter for this API.

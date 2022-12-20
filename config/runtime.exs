@@ -10,3 +10,7 @@ import Config
 if base_url = System.get_env("REDSHIRT_BASE_URI") do
   config :redshirt, base_url: base_url
 end
+
+if api_key = System.get_env("CFBD_API_KEY") do
+  config :redshirt, api_key: api_key
+end
