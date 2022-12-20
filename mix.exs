@@ -1,9 +1,9 @@
-defmodule CollegeFootballDataAPI.Mixfile do
+defmodule Redshirt.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app: :college_football_data_api,
+      app: :redshirt,
       version: "0.0.1",
       elixir: "~> 1.10",
       build_embedded: Mix.env() == :prod,
@@ -42,7 +42,7 @@ defmodule CollegeFootballDataAPI.Mixfile do
 
   defp package do
     [
-      name: "college_football_data_api",
+      name: "redshirt",
       files: ~w(.formatter.exs config lib mix.exs README* LICENSE*)
     ]
   end
