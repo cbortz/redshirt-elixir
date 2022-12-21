@@ -30,13 +30,10 @@ defmodule Redshirt.Model.TeamSpRatingDefense do
           :passingDowns => float() | nil,
           :havoc => Redshirt.Model.TeamSpRatingDefenseHavoc.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.TeamSpRatingDefense do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:havoc, :struct, Redshirt.Model.TeamSpRatingDefenseHavoc, options)
+  def model_structure do
+    %__MODULE__{
+      havoc: Redshirt.Model.TeamSpRatingDefenseHavoc.model_structure()
+    }
   end
 end

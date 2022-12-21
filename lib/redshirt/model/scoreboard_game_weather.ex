@@ -20,10 +20,8 @@ defmodule Redshirt.Model.ScoreboardGameWeather do
           :windSpeed => float() | nil,
           :windDirection => float() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.ScoreboardGameWeather do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

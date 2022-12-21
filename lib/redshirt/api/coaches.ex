@@ -51,7 +51,7 @@ defmodule Redshirt.Api.Coaches do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.Coach{}]}
+      {200, [Redshirt.Model.Coach.model_structure()]}
     ])
   end
 end

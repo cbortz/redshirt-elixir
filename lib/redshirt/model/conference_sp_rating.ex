@@ -28,15 +28,12 @@ defmodule Redshirt.Model.ConferenceSpRating do
           :defense => Redshirt.Model.ConferenceSpRatingDefense.t() | nil,
           :specialTeams => Redshirt.Model.TeamSpRatingSpecialTeams.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.ConferenceSpRating do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:offense, :struct, Redshirt.Model.ConferenceSpRatingOffense, options)
-    |> deserialize(:defense, :struct, Redshirt.Model.ConferenceSpRatingDefense, options)
-    |> deserialize(:specialTeams, :struct, Redshirt.Model.TeamSpRatingSpecialTeams, options)
+  def model_structure do
+    %__MODULE__{
+      offense: Redshirt.Model.ConferenceSpRatingOffense.model_structure(),
+      defense: Redshirt.Model.ConferenceSpRatingDefense.model_structure(),
+      specialTeams: Redshirt.Model.TeamSpRatingSpecialTeams.model_structure()
+    }
   end
 end

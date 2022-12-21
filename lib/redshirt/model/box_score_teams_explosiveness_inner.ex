@@ -16,13 +16,10 @@ defmodule Redshirt.Model.BoxScoreTeamsExplosivenessInner do
           :team => String.t() | nil,
           :overall => Redshirt.Model.BoxScoreTeamsPpaInnerOverall.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.BoxScoreTeamsExplosivenessInner do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:overall, :struct, Redshirt.Model.BoxScoreTeamsPpaInnerOverall, options)
+  def model_structure do
+    %__MODULE__{
+      overall: Redshirt.Model.BoxScoreTeamsPpaInnerOverall.model_structure()
+    }
   end
 end

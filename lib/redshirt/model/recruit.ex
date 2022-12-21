@@ -46,13 +46,10 @@ defmodule Redshirt.Model.Recruit do
           :country => String.t() | nil,
           :hometownInfo => Redshirt.Model.RecruitHometownInfo.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.Recruit do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:hometownInfo, :struct, Redshirt.Model.RecruitHometownInfo, options)
+  def model_structure do
+    %__MODULE__{
+      hometownInfo: Redshirt.Model.RecruitHometownInfo.model_structure()
+    }
   end
 end

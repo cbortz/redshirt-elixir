@@ -18,10 +18,8 @@ defmodule Redshirt.Model.TeamPpaOffenseCumulative do
           :passing => float() | nil,
           :rushing => float() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.TeamPpaOffenseCumulative do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

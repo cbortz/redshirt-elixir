@@ -18,10 +18,8 @@ defmodule Redshirt.Model.BoxScoreTeamsFieldPositionInner do
           :averageStart => float() | nil,
           :averageStartingPredictedPoints => float() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.BoxScoreTeamsFieldPositionInner do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

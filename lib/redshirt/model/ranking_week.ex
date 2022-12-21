@@ -20,13 +20,10 @@ defmodule Redshirt.Model.RankingWeek do
           :week => integer() | nil,
           :polls => [Redshirt.Model.RankingWeekPollsInner.t()] | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.RankingWeek do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:polls, :list, Redshirt.Model.RankingWeekPollsInner, options)
+  def model_structure do
+    %__MODULE__{
+      polls: [Redshirt.Model.RankingWeekPollsInner.model_structure()]
+    }
   end
 end

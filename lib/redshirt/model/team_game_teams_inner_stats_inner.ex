@@ -16,10 +16,8 @@ defmodule Redshirt.Model.TeamGameTeamsInnerStatsInner do
           :category => String.t() | nil,
           :stat => String.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.TeamGameTeamsInnerStatsInner do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

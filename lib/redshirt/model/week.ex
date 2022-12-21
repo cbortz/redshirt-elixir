@@ -22,10 +22,8 @@ defmodule Redshirt.Model.Week do
           :firstGameStart => String.t() | nil,
           :lastGameStart => String.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.Week do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

@@ -18,10 +18,8 @@ defmodule Redshirt.Model.ScoreboardGameVenue do
           :city => String.t() | nil,
           :state => String.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.ScoreboardGameVenue do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

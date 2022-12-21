@@ -53,7 +53,7 @@ defmodule Redshirt.Api.Players do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.PlayerSeasonStat{}]},
+      {200, [Redshirt.Model.PlayerSeasonStat.model_structure()]},
       {400, false}
     ])
   end
@@ -100,7 +100,7 @@ defmodule Redshirt.Api.Players do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.PlayerUsage{}]},
+      {200, [Redshirt.Model.PlayerUsage.model_structure()]},
       {400, false}
     ])
   end
@@ -143,7 +143,7 @@ defmodule Redshirt.Api.Players do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.ReturningProduction{}]},
+      {200, [Redshirt.Model.ReturningProduction.model_structure()]},
       {400, false}
     ])
   end
@@ -176,7 +176,7 @@ defmodule Redshirt.Api.Players do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.PortalPlayer{}]},
+      {200, [Redshirt.Model.PortalPlayer.model_structure()]},
       {400, false}
     ])
   end
@@ -221,7 +221,7 @@ defmodule Redshirt.Api.Players do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.PlayerSearchResult{}]},
+      {200, [Redshirt.Model.PlayerSearchResult.model_structure()]},
       {400, false}
     ])
   end

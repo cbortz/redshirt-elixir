@@ -32,14 +32,11 @@ defmodule Redshirt.Model.LivePlayByPlay do
           :teams => [Redshirt.Model.LivePlayByPlayTeamsInner.t()] | nil,
           :drives => [Redshirt.Model.LivePlayByPlayDrivesInner.t()] | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.LivePlayByPlay do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:teams, :list, Redshirt.Model.LivePlayByPlayTeamsInner, options)
-    |> deserialize(:drives, :list, Redshirt.Model.LivePlayByPlayDrivesInner, options)
+  def model_structure do
+    %__MODULE__{
+      teams: [Redshirt.Model.LivePlayByPlayTeamsInner.model_structure()],
+      drives: [Redshirt.Model.LivePlayByPlayDrivesInner.model_structure()]
+    }
   end
 end

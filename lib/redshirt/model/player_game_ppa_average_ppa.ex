@@ -18,10 +18,8 @@ defmodule Redshirt.Model.PlayerGamePpaAveragePpa do
           :pass => float() | nil,
           :rush => float() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.PlayerGamePpaAveragePpa do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

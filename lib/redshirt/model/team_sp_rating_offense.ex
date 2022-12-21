@@ -32,10 +32,8 @@ defmodule Redshirt.Model.TeamSpRatingOffense do
           :runRate => float() | nil,
           :pace => float() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.TeamSpRatingOffense do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

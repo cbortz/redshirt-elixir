@@ -22,14 +22,11 @@ defmodule Redshirt.Model.BoxScorePlayersPpaInner do
           :average => Redshirt.Model.BoxScorePlayersPpaInnerAverage.t() | nil,
           :cumulative => Redshirt.Model.BoxScorePlayersPpaInnerAverage.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.BoxScorePlayersPpaInner do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:average, :struct, Redshirt.Model.BoxScorePlayersPpaInnerAverage, options)
-    |> deserialize(:cumulative, :struct, Redshirt.Model.BoxScorePlayersPpaInnerAverage, options)
+  def model_structure do
+    %__MODULE__{
+      average: Redshirt.Model.BoxScorePlayersPpaInnerAverage.model_structure(),
+      cumulative: Redshirt.Model.BoxScorePlayersPpaInnerAverage.model_structure()
+    }
   end
 end

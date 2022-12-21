@@ -20,13 +20,10 @@ defmodule Redshirt.Model.Coach do
           :hire_date => String.t() | nil,
           :seasons => [Redshirt.Model.CoachSeasonsInner.t()] | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.Coach do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:seasons, :list, Redshirt.Model.CoachSeasonsInner, options)
+  def model_structure do
+    %__MODULE__{
+      seasons: [Redshirt.Model.CoachSeasonsInner.model_structure()]
+    }
   end
 end

@@ -42,13 +42,10 @@ defmodule Redshirt.Model.Team do
           :twitter => String.t() | nil,
           :location => Redshirt.Model.TeamLocation.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.Team do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:location, :struct, Redshirt.Model.TeamLocation, options)
+  def model_structure do
+    %__MODULE__{
+      location: Redshirt.Model.TeamLocation.model_structure()
+    }
   end
 end

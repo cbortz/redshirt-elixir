@@ -37,7 +37,7 @@ defmodule Redshirt.Api.Plays do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, %Redshirt.Model.LivePlayByPlay{}}
+      {200, Redshirt.Model.LivePlayByPlay.model_structure()}
     ])
   end
 
@@ -67,7 +67,7 @@ defmodule Redshirt.Api.Plays do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.PlayStatType{}]},
+      {200, [Redshirt.Model.PlayStatType.model_structure()]},
       {400, false}
     ])
   end
@@ -118,7 +118,7 @@ defmodule Redshirt.Api.Plays do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.PlayStat{}]},
+      {200, [Redshirt.Model.PlayStat.model_structure()]},
       {400, false}
     ])
   end
@@ -149,7 +149,7 @@ defmodule Redshirt.Api.Plays do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.PlayType{}]}
+      {200, [Redshirt.Model.PlayType.model_structure()]}
     ])
   end
 
@@ -205,7 +205,7 @@ defmodule Redshirt.Api.Plays do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.Play{}]}
+      {200, [Redshirt.Model.Play.model_structure()]}
     ])
   end
 end

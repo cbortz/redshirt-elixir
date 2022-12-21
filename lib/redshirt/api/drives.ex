@@ -59,7 +59,7 @@ defmodule Redshirt.Api.Drives do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.Drive{}]}
+      {200, [Redshirt.Model.Drive.model_structure()]}
     ])
   end
 end

@@ -36,10 +36,8 @@ defmodule Redshirt.Model.GameMedia do
           :mediaType => String.t() | nil,
           :outlet => String.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.GameMedia do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

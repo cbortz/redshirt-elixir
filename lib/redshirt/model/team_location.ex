@@ -40,10 +40,8 @@ defmodule Redshirt.Model.TeamLocation do
           :grass => boolean() | nil,
           :dome => boolean() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.TeamLocation do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

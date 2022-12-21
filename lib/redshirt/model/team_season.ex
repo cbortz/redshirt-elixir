@@ -36,10 +36,8 @@ defmodule Redshirt.Model.TeamSeason do
           :sp_offense => float() | nil,
           :sp_defense => float() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.TeamSeason do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

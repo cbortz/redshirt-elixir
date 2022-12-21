@@ -18,10 +18,8 @@ defmodule Redshirt.Model.AdvancedGameStatOffenseStandardDowns do
           :successRate => float() | nil,
           :explosiveness => float() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.AdvancedGameStatOffenseStandardDowns do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

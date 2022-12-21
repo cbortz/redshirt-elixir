@@ -26,13 +26,10 @@ defmodule Redshirt.Model.PlayerUsage do
           :conference => String.t() | nil,
           :usage => Redshirt.Model.PlayerUsageUsage.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.PlayerUsage do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:usage, :struct, Redshirt.Model.PlayerUsageUsage, options)
+  def model_structure do
+    %__MODULE__{
+      usage: Redshirt.Model.PlayerUsageUsage.model_structure()
+    }
   end
 end

@@ -29,25 +29,19 @@ defmodule Redshirt.Model.BoxScoreTeams do
             [Redshirt.Model.BoxScoreTeamsScoringOpportunitiesInner.t()] | nil,
           :fieldPosition => [Redshirt.Model.BoxScoreTeamsFieldPositionInner.t()] | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.BoxScoreTeams do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:ppa, :list, Redshirt.Model.BoxScoreTeamsPpaInner, options)
-    |> deserialize(:cumulativePpa, :list, Redshirt.Model.BoxScoreTeamsPpaInner, options)
-    |> deserialize(:successRates, :list, Redshirt.Model.BoxScoreTeamsSuccessRatesInner, options)
-    |> deserialize(:explosiveness, :list, Redshirt.Model.BoxScoreTeamsExplosivenessInner, options)
-    |> deserialize(:rushing, :list, Redshirt.Model.BoxScoreTeamsRushingInner, options)
-    |> deserialize(:havoc, :list, Redshirt.Model.BoxScoreTeamsHavocInner, options)
-    |> deserialize(
-      :scoringOpportunities,
-      :list,
-      Redshirt.Model.BoxScoreTeamsScoringOpportunitiesInner,
-      options
-    )
-    |> deserialize(:fieldPosition, :list, Redshirt.Model.BoxScoreTeamsFieldPositionInner, options)
+  def model_structure do
+    %__MODULE__{
+      ppa: [Redshirt.Model.BoxScoreTeamsPpaInner.model_structure()],
+      cumulativePpa: [Redshirt.Model.BoxScoreTeamsPpaInner.model_structure()],
+      successRates: [Redshirt.Model.BoxScoreTeamsSuccessRatesInner.model_structure()],
+      explosiveness: [Redshirt.Model.BoxScoreTeamsExplosivenessInner.model_structure()],
+      rushing: [Redshirt.Model.BoxScoreTeamsRushingInner.model_structure()],
+      havoc: [Redshirt.Model.BoxScoreTeamsHavocInner.model_structure()],
+      scoringOpportunities: [
+        Redshirt.Model.BoxScoreTeamsScoringOpportunitiesInner.model_structure()
+      ],
+      fieldPosition: [Redshirt.Model.BoxScoreTeamsFieldPositionInner.model_structure()]
+    }
   end
 end

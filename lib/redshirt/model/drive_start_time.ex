@@ -16,10 +16,8 @@ defmodule Redshirt.Model.DriveStartTime do
           :minutes => integer() | nil,
           :seconds => integer() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.DriveStartTime do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

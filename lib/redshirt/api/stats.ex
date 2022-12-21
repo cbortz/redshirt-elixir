@@ -51,7 +51,7 @@ defmodule Redshirt.Api.Stats do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.AdvancedGameStat{}]},
+      {200, [Redshirt.Model.AdvancedGameStat.model_structure()]},
       {400, false}
     ])
   end
@@ -98,7 +98,7 @@ defmodule Redshirt.Api.Stats do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.AdvancedSeasonStat{}]},
+      {200, [Redshirt.Model.AdvancedSeasonStat.model_structure()]},
       {400, false}
     ])
   end
@@ -173,7 +173,7 @@ defmodule Redshirt.Api.Stats do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.TeamSeasonStat{}]},
+      {200, [Redshirt.Model.TeamSeasonStat.model_structure()]},
       {400, false}
     ])
   end

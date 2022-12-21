@@ -52,10 +52,8 @@ defmodule Redshirt.Model.LivePlayByPlayDrivesInnerPlaysInner do
           :downType => String.t() | nil,
           :playText => String.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.LivePlayByPlayDrivesInnerPlaysInner do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

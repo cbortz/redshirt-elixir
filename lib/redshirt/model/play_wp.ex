@@ -46,10 +46,8 @@ defmodule Redshirt.Model.PlayWp do
           :homeWinProb => float() | nil,
           :playNumber => integer() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.PlayWp do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

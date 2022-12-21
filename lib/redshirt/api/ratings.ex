@@ -45,7 +45,7 @@ defmodule Redshirt.Api.Ratings do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.ConferenceSpRating{}]},
+      {200, [Redshirt.Model.ConferenceSpRating.model_structure()]},
       {400, false}
     ])
   end
@@ -88,7 +88,7 @@ defmodule Redshirt.Api.Ratings do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.TeamEloRating{}]},
+      {200, [Redshirt.Model.TeamEloRating.model_structure()]},
       {400, false}
     ])
   end
@@ -127,7 +127,7 @@ defmodule Redshirt.Api.Ratings do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.TeamSpRating{}]},
+      {200, [Redshirt.Model.TeamSpRating.model_structure()]},
       {400, false}
     ])
   end
@@ -168,7 +168,7 @@ defmodule Redshirt.Api.Ratings do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.TeamSrsRating{}]},
+      {200, [Redshirt.Model.TeamSrsRating.model_structure()]},
       {400, false}
     ])
   end

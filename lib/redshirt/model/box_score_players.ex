@@ -16,14 +16,11 @@ defmodule Redshirt.Model.BoxScorePlayers do
           :usage => [Redshirt.Model.BoxScorePlayersUsageInner.t()] | nil,
           :ppa => [Redshirt.Model.BoxScorePlayersPpaInner.t()] | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.BoxScorePlayers do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:usage, :list, Redshirt.Model.BoxScorePlayersUsageInner, options)
-    |> deserialize(:ppa, :list, Redshirt.Model.BoxScorePlayersPpaInner, options)
+  def model_structure do
+    %__MODULE__{
+      usage: [Redshirt.Model.BoxScorePlayersUsageInner.model_structure()],
+      ppa: [Redshirt.Model.BoxScorePlayersPpaInner.model_structure()]
+    }
   end
 end

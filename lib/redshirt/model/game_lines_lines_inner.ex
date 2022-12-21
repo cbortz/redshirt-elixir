@@ -28,10 +28,8 @@ defmodule Redshirt.Model.GameLinesLinesInner do
           :homeMoneyline => float() | nil,
           :awayMoneyline => float() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.GameLinesLinesInner do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

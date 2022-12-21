@@ -38,13 +38,10 @@ defmodule Redshirt.Model.Venue do
           :dome => boolean() | nil,
           :timezone => String.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.Venue do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:location, :struct, Redshirt.Model.VenueLocation, options)
+  def model_structure do
+    %__MODULE__{
+      location: Redshirt.Model.VenueLocation.model_structure()
+    }
   end
 end

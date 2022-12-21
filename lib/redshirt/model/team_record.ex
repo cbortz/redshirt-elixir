@@ -30,16 +30,13 @@ defmodule Redshirt.Model.TeamRecord do
           :homeGames => Redshirt.Model.TeamRecordTotal.t() | nil,
           :awayGames => Redshirt.Model.TeamRecordTotal.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.TeamRecord do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:total, :struct, Redshirt.Model.TeamRecordTotal, options)
-    |> deserialize(:conferenceGames, :struct, Redshirt.Model.TeamRecordTotal, options)
-    |> deserialize(:homeGames, :struct, Redshirt.Model.TeamRecordTotal, options)
-    |> deserialize(:awayGames, :struct, Redshirt.Model.TeamRecordTotal, options)
+  def model_structure do
+    %__MODULE__{
+      total: Redshirt.Model.TeamRecordTotal.model_structure(),
+      conferenceGames: Redshirt.Model.TeamRecordTotal.model_structure(),
+      homeGames: Redshirt.Model.TeamRecordTotal.model_structure(),
+      awayGames: Redshirt.Model.TeamRecordTotal.model_structure()
+    }
   end
 end

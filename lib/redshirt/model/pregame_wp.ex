@@ -28,10 +28,8 @@ defmodule Redshirt.Model.PregameWp do
           :spread => float() | nil,
           :homeWinProb => float() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.PregameWp do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

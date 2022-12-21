@@ -26,13 +26,10 @@ defmodule Redshirt.Model.PlayerGamePpa do
           :opponent => String.t() | nil,
           :averagePPA => Redshirt.Model.PlayerGamePpaAveragePpa.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.PlayerGamePpa do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:averagePPA, :struct, Redshirt.Model.PlayerGamePpaAveragePpa, options)
+  def model_structure do
+    %__MODULE__{
+      averagePPA: Redshirt.Model.PlayerGamePpaAveragePpa.model_structure()
+    }
   end
 end

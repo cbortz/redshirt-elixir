@@ -18,10 +18,8 @@ defmodule Redshirt.Model.TeamTalent do
           :school => String.t() | nil,
           :talent => float() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.TeamTalent do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

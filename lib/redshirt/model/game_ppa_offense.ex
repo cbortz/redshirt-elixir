@@ -24,10 +24,8 @@ defmodule Redshirt.Model.GamePpaOffense do
           :secondDown => float() | nil,
           :thirdDown => float() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.GamePpaOffense do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

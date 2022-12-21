@@ -28,10 +28,8 @@ defmodule Redshirt.Model.PlayerSeasonPpaAveragePpa do
           :standardDowns => float() | nil,
           :passingDowns => float() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.PlayerSeasonPpaAveragePpa do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

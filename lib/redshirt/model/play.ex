@@ -66,13 +66,10 @@ defmodule Redshirt.Model.Play do
           :ppa => float() | nil,
           :wallclock => String.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.Play do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:clock, :struct, Redshirt.Model.DriveStartTime, options)
+  def model_structure do
+    %__MODULE__{
+      clock: Redshirt.Model.DriveStartTime.model_structure()
+    }
   end
 end

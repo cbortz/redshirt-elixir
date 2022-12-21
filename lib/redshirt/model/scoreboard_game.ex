@@ -44,17 +44,14 @@ defmodule Redshirt.Model.ScoreboardGame do
           :weather => Redshirt.Model.ScoreboardGameWeather.t() | nil,
           :betting => Redshirt.Model.ScoreboardGameBetting.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.ScoreboardGame do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:venue, :struct, Redshirt.Model.ScoreboardGameVenue, options)
-    |> deserialize(:homeTeam, :struct, Redshirt.Model.ScoreboardGameHomeTeam, options)
-    |> deserialize(:awayTeam, :struct, Redshirt.Model.ScoreboardGameHomeTeam, options)
-    |> deserialize(:weather, :struct, Redshirt.Model.ScoreboardGameWeather, options)
-    |> deserialize(:betting, :struct, Redshirt.Model.ScoreboardGameBetting, options)
+  def model_structure do
+    %__MODULE__{
+      venue: Redshirt.Model.ScoreboardGameVenue.model_structure(),
+      homeTeam: Redshirt.Model.ScoreboardGameHomeTeam.model_structure(),
+      awayTeam: Redshirt.Model.ScoreboardGameHomeTeam.model_structure(),
+      weather: Redshirt.Model.ScoreboardGameWeather.model_structure(),
+      betting: Redshirt.Model.ScoreboardGameBetting.model_structure()
+    }
   end
 end

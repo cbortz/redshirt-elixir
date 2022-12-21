@@ -32,10 +32,8 @@ defmodule Redshirt.Model.PortalPlayer do
           :stars => integer() | nil,
           :eligibility => String.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.PortalPlayer do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

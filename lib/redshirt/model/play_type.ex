@@ -18,10 +18,8 @@ defmodule Redshirt.Model.PlayType do
           :text => String.t() | nil,
           :abbreviation => String.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.PlayType do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

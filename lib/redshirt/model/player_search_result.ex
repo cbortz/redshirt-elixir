@@ -36,10 +36,8 @@ defmodule Redshirt.Model.PlayerSearchResult do
           :teamColor => String.t() | nil,
           :teamColorSecondary => String.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.PlayerSearchResult do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

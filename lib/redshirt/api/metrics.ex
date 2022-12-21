@@ -51,7 +51,7 @@ defmodule Redshirt.Api.Metrics do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.GamePpa{}]},
+      {200, [Redshirt.Model.GamePpa.model_structure()]},
       {400, false}
     ])
   end
@@ -102,7 +102,7 @@ defmodule Redshirt.Api.Metrics do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.PlayerGamePpa{}]},
+      {200, [Redshirt.Model.PlayerGamePpa.model_structure()]},
       {400, false}
     ])
   end
@@ -151,7 +151,7 @@ defmodule Redshirt.Api.Metrics do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.PlayerSeasonPpa{}]},
+      {200, [Redshirt.Model.PlayerSeasonPpa.model_structure()]},
       {400, false}
     ])
   end
@@ -186,7 +186,7 @@ defmodule Redshirt.Api.Metrics do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.PredictedPoints{}]},
+      {200, [Redshirt.Model.PredictedPoints.model_structure()]},
       {400, false}
     ])
   end
@@ -229,7 +229,7 @@ defmodule Redshirt.Api.Metrics do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.PregameWp{}]},
+      {200, [Redshirt.Model.PregameWp.model_structure()]},
       {400, false}
     ])
   end
@@ -272,7 +272,7 @@ defmodule Redshirt.Api.Metrics do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.TeamPpa{}]},
+      {200, [Redshirt.Model.TeamPpa.model_structure()]},
       {400, false}
     ])
   end
@@ -305,7 +305,7 @@ defmodule Redshirt.Api.Metrics do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.PlayWp{}]},
+      {200, [Redshirt.Model.PlayWp.model_structure()]},
       {400, false}
     ])
   end

@@ -32,10 +32,8 @@ defmodule Redshirt.Model.BoxScorePlayersUsageInner do
           :rushing => float() | nil,
           :passing => float() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.BoxScorePlayersUsageInner do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

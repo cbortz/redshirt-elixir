@@ -55,7 +55,7 @@ defmodule Redshirt.Api.Betting do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.GameLines{}]},
+      {200, [Redshirt.Model.GameLines.model_structure()]},
       {400, false}
     ])
   end

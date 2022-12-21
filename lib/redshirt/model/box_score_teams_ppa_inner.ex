@@ -22,15 +22,12 @@ defmodule Redshirt.Model.BoxScoreTeamsPpaInner do
           :passing => Redshirt.Model.BoxScoreTeamsPpaInnerOverall.t() | nil,
           :rushing => Redshirt.Model.BoxScoreTeamsPpaInnerOverall.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.BoxScoreTeamsPpaInner do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:overall, :struct, Redshirt.Model.BoxScoreTeamsPpaInnerOverall, options)
-    |> deserialize(:passing, :struct, Redshirt.Model.BoxScoreTeamsPpaInnerOverall, options)
-    |> deserialize(:rushing, :struct, Redshirt.Model.BoxScoreTeamsPpaInnerOverall, options)
+  def model_structure do
+    %__MODULE__{
+      overall: Redshirt.Model.BoxScoreTeamsPpaInnerOverall.model_structure(),
+      passing: Redshirt.Model.BoxScoreTeamsPpaInnerOverall.model_structure(),
+      rushing: Redshirt.Model.BoxScoreTeamsPpaInnerOverall.model_structure()
+    }
   end
 end

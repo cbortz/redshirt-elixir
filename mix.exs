@@ -38,7 +38,7 @@ defmodule Redshirt.Mixfile do
       {:dialyxir, "~> 1.2", runtime: false, only: [:dev, :test]},
       {:ex_doc, "~> 0.28", only: :dev, runtime: false},
       {:mix_audit, "~> 2.0", runtime: false, only: [:dev, :test]},
-      {:poison, "~> 3.0"},
+      {:poison, "~> 4.0"},
       {:tesla, "~> 1.4"}
     ]
   end

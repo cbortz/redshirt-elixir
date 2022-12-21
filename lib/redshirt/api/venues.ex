@@ -35,7 +35,7 @@ defmodule Redshirt.Api.Venues do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.Venue{}]},
+      {200, [Redshirt.Model.Venue.model_structure()]},
       {400, false}
     ])
   end

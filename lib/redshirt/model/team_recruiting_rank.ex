@@ -20,10 +20,8 @@ defmodule Redshirt.Model.TeamRecruitingRank do
           :team => String.t() | nil,
           :points => float() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.TeamRecruitingRank do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

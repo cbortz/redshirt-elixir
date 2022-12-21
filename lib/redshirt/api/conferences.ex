@@ -35,7 +35,7 @@ defmodule Redshirt.Api.Conferences do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.Conference{}]},
+      {200, [Redshirt.Model.Conference.model_structure()]},
       {400, false}
     ])
   end

@@ -45,7 +45,7 @@ defmodule Redshirt.Api.Rankings do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.RankingWeek{}]},
+      {200, [Redshirt.Model.RankingWeek.model_structure()]},
       {400, false}
     ])
   end

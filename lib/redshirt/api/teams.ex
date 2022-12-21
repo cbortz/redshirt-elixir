@@ -41,7 +41,7 @@ defmodule Redshirt.Api.Teams do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.Team{}]},
+      {200, [Redshirt.Model.Team.model_structure()]},
       {400, false}
     ])
   end
@@ -80,7 +80,7 @@ defmodule Redshirt.Api.Teams do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.Player{}]},
+      {200, [Redshirt.Model.Player.model_structure()]},
       {400, false}
     ])
   end
@@ -117,7 +117,7 @@ defmodule Redshirt.Api.Teams do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.TeamTalent{}]},
+      {200, [Redshirt.Model.TeamTalent.model_structure()]},
       {400, false}
     ])
   end
@@ -160,7 +160,7 @@ defmodule Redshirt.Api.Teams do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, %Redshirt.Model.TeamMatchup{}},
+      {200, Redshirt.Model.TeamMatchup.model_structure()},
       {400, false}
     ])
   end
@@ -197,7 +197,7 @@ defmodule Redshirt.Api.Teams do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.Team{}]},
+      {200, [Redshirt.Model.Team.model_structure()]},
       {400, false}
     ])
   end

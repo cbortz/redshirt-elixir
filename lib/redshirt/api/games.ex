@@ -37,7 +37,7 @@ defmodule Redshirt.Api.Games do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, %Redshirt.Model.BoxScore{}}
+      {200, Redshirt.Model.BoxScore.model_structure()}
     ])
   end
 
@@ -69,7 +69,7 @@ defmodule Redshirt.Api.Games do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.Week{}]},
+      {200, [Redshirt.Model.Week.model_structure()]},
       {400, false}
     ])
   end
@@ -118,7 +118,7 @@ defmodule Redshirt.Api.Games do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.GameMedia{}]},
+      {200, [Redshirt.Model.GameMedia.model_structure()]},
       {400, false}
     ])
   end
@@ -167,7 +167,7 @@ defmodule Redshirt.Api.Games do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.GameWeather{}]},
+      {200, [Redshirt.Model.GameWeather.model_structure()]},
       {400, false}
     ])
   end
@@ -220,7 +220,7 @@ defmodule Redshirt.Api.Games do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.Game{}]},
+      {200, [Redshirt.Model.Game.model_structure()]},
       {400, false}
     ])
   end
@@ -269,7 +269,7 @@ defmodule Redshirt.Api.Games do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.PlayerGame{}]},
+      {200, [Redshirt.Model.PlayerGame.model_structure()]},
       {400, false}
     ])
   end
@@ -308,7 +308,7 @@ defmodule Redshirt.Api.Games do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.ScoreboardGame{}]},
+      {200, [Redshirt.Model.ScoreboardGame.model_structure()]},
       {400, false}
     ])
   end
@@ -357,7 +357,7 @@ defmodule Redshirt.Api.Games do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.TeamGame{}]},
+      {200, [Redshirt.Model.TeamGame.model_structure()]},
       {400, false}
     ])
   end
@@ -398,7 +398,7 @@ defmodule Redshirt.Api.Games do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.TeamRecord{}]},
+      {200, [Redshirt.Model.TeamRecord.model_structure()]},
       {400, false}
     ])
   end

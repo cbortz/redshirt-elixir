@@ -24,10 +24,8 @@ defmodule Redshirt.Model.DraftPickHometownInfo do
           :longitude => float() | nil,
           :countryFips => integer() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.DraftPickHometownInfo do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

@@ -20,10 +20,8 @@ defmodule Redshirt.Model.DraftTeam do
           :displayName => String.t() | nil,
           :logo => String.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.DraftTeam do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

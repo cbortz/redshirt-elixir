@@ -60,14 +60,11 @@ defmodule Redshirt.Model.Drive do
           :end_offense_score => integer() | nil,
           :end_defense_score => integer() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.Drive do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:start_time, :struct, Redshirt.Model.DriveStartTime, options)
-    |> deserialize(:end_time, :struct, Redshirt.Model.DriveStartTime, options)
+  def model_structure do
+    %__MODULE__{
+      start_time: Redshirt.Model.DriveStartTime.model_structure(),
+      end_time: Redshirt.Model.DriveStartTime.model_structure()
+    }
   end
 end

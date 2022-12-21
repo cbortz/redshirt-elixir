@@ -20,10 +20,8 @@ defmodule Redshirt.Model.ScoreboardGameBetting do
           :homeMoneyline => integer() | nil,
           :awayMoneyline => integer() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.ScoreboardGameBetting do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

@@ -48,13 +48,10 @@ defmodule Redshirt.Model.DraftPick do
           :preDraftGrade => integer() | nil,
           :hometownInfo => Redshirt.Model.DraftPickHometownInfo.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.DraftPick do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:hometownInfo, :struct, Redshirt.Model.DraftPickHometownInfo, options)
+  def model_structure do
+    %__MODULE__{
+      hometownInfo: Redshirt.Model.DraftPickHometownInfo.model_structure()
+    }
   end
 end

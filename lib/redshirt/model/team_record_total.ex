@@ -20,10 +20,8 @@ defmodule Redshirt.Model.TeamRecordTotal do
           :losses => integer() | nil,
           :ties => integer() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.TeamRecordTotal do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

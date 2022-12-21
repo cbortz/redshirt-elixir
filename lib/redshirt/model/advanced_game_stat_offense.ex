@@ -48,36 +48,13 @@ defmodule Redshirt.Model.AdvancedGameStatOffense do
           :rushingPlays => Redshirt.Model.AdvancedGameStatOffenseRushingPlays.t() | nil,
           :passingPlays => Redshirt.Model.AdvancedGameStatOffenseRushingPlays.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.AdvancedGameStatOffense do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(
-      :standardDowns,
-      :struct,
-      Redshirt.Model.AdvancedGameStatOffenseStandardDowns,
-      options
-    )
-    |> deserialize(
-      :passingDowns,
-      :struct,
-      Redshirt.Model.AdvancedGameStatOffenseStandardDowns,
-      options
-    )
-    |> deserialize(
-      :rushingPlays,
-      :struct,
-      Redshirt.Model.AdvancedGameStatOffenseRushingPlays,
-      options
-    )
-    |> deserialize(
-      :passingPlays,
-      :struct,
-      Redshirt.Model.AdvancedGameStatOffenseRushingPlays,
-      options
-    )
+  def model_structure do
+    %__MODULE__{
+      standardDowns: Redshirt.Model.AdvancedGameStatOffenseStandardDowns.model_structure(),
+      passingDowns: Redshirt.Model.AdvancedGameStatOffenseStandardDowns.model_structure(),
+      rushingPlays: Redshirt.Model.AdvancedGameStatOffenseRushingPlays.model_structure(),
+      passingPlays: Redshirt.Model.AdvancedGameStatOffenseRushingPlays.model_structure()
+    }
   end
 end

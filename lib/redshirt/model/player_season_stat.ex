@@ -28,10 +28,8 @@ defmodule Redshirt.Model.PlayerSeasonStat do
           :statType => String.t() | nil,
           :stat => float() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.PlayerSeasonStat do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

@@ -16,10 +16,8 @@ defmodule Redshirt.Model.PlayStatType do
           :id => integer() | nil,
           :name => String.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.PlayStatType do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

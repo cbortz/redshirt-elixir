@@ -49,7 +49,7 @@ defmodule Redshirt.Api.Recruiting do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.PositionGroupRecruitingRating{}]},
+      {200, [Redshirt.Model.PositionGroupRecruitingRating.model_structure()]},
       {400, false}
     ])
   end
@@ -94,7 +94,7 @@ defmodule Redshirt.Api.Recruiting do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.Recruit{}]},
+      {200, [Redshirt.Model.Recruit.model_structure()]},
       {400, false}
     ])
   end
@@ -135,7 +135,7 @@ defmodule Redshirt.Api.Recruiting do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.TeamRecruitingRank{}]},
+      {200, [Redshirt.Model.TeamRecruitingRank.model_structure()]},
       {400, false}
     ])
   end

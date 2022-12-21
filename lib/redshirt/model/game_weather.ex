@@ -56,10 +56,8 @@ defmodule Redshirt.Model.GameWeather do
           :weatherConditionCode => integer() | nil,
           :weatherCondition => String.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.GameWeather do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

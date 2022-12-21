@@ -22,10 +22,8 @@ defmodule Redshirt.Model.ScoreboardGameHomeTeam do
           :classification => String.t() | nil,
           :points => integer() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.ScoreboardGameHomeTeam do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

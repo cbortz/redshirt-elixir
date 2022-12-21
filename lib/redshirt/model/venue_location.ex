@@ -16,10 +16,8 @@ defmodule Redshirt.Model.VenueLocation do
           :x => float() | nil,
           :y => float() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.VenueLocation do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

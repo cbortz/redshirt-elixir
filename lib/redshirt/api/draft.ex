@@ -49,7 +49,7 @@ defmodule Redshirt.Api.Draft do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.DraftPick{}]},
+      {200, [Redshirt.Model.DraftPick.model_structure()]},
       {400, false}
     ])
   end
@@ -80,7 +80,7 @@ defmodule Redshirt.Api.Draft do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.DraftPosition{}]},
+      {200, [Redshirt.Model.DraftPosition.model_structure()]},
       {400, false}
     ])
   end
@@ -111,7 +111,7 @@ defmodule Redshirt.Api.Draft do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, [%Redshirt.Model.DraftTeam{}]},
+      {200, [Redshirt.Model.DraftTeam.model_structure()]},
       {400, false}
     ])
   end

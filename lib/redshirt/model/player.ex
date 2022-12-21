@@ -44,10 +44,8 @@ defmodule Redshirt.Model.Player do
           :home_county_fips => String.t() | nil,
           :recruit_ids => [integer()] | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.Player do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

@@ -16,10 +16,8 @@ defmodule Redshirt.Model.PredictedPoints do
           :yardLine => integer() | nil,
           :predictedPoints => float() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.PredictedPoints do
-  def decode(value, _options) do
-    value
+  def model_structure do
+    %__MODULE__{}
   end
 end

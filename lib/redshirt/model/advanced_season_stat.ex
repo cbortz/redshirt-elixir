@@ -22,14 +22,11 @@ defmodule Redshirt.Model.AdvancedSeasonStat do
           :offense => Redshirt.Model.AdvancedSeasonStatOffense.t() | nil,
           :defense => Redshirt.Model.AdvancedSeasonStatOffense.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.AdvancedSeasonStat do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:offense, :struct, Redshirt.Model.AdvancedSeasonStatOffense, options)
-    |> deserialize(:defense, :struct, Redshirt.Model.AdvancedSeasonStatOffense, options)
+  def model_structure do
+    %__MODULE__{
+      offense: Redshirt.Model.AdvancedSeasonStatOffense.model_structure(),
+      defense: Redshirt.Model.AdvancedSeasonStatOffense.model_structure()
+    }
   end
 end

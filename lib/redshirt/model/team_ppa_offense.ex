@@ -26,13 +26,10 @@ defmodule Redshirt.Model.TeamPpaOffense do
           :thirdDown => float() | nil,
           :cumulative => Redshirt.Model.TeamPpaOffenseCumulative.t() | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.TeamPpaOffense do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:cumulative, :struct, Redshirt.Model.TeamPpaOffenseCumulative, options)
+  def model_structure do
+    %__MODULE__{
+      cumulative: Redshirt.Model.TeamPpaOffenseCumulative.model_structure()
+    }
   end
 end

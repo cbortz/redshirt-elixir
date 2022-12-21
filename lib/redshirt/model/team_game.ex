@@ -16,13 +16,10 @@ defmodule Redshirt.Model.TeamGame do
           :id => integer() | nil,
           :teams => [Redshirt.Model.TeamGameTeamsInner.t()] | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.TeamGame do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(:teams, :list, Redshirt.Model.TeamGameTeamsInner, options)
+  def model_structure do
+    %__MODULE__{
+      teams: [Redshirt.Model.TeamGameTeamsInner.model_structure()]
+    }
   end
 end

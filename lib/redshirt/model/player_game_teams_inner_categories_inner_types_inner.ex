@@ -17,18 +17,12 @@ defmodule Redshirt.Model.PlayerGameTeamsInnerCategoriesInnerTypesInner do
           :athletes =>
             [Redshirt.Model.PlayerGameTeamsInnerCategoriesInnerTypesInnerAthletesInner.t()] | nil
         }
-end
 
-defimpl Poison.Decoder, for: Redshirt.Model.PlayerGameTeamsInnerCategoriesInnerTypesInner do
-  import Redshirt.Deserializer
-
-  def decode(value, options) do
-    value
-    |> deserialize(
-      :athletes,
-      :list,
-      Redshirt.Model.PlayerGameTeamsInnerCategoriesInnerTypesInnerAthletesInner,
-      options
-    )
+  def model_structure do
+    %__MODULE__{
+      athletes: [
+        Redshirt.Model.PlayerGameTeamsInnerCategoriesInnerTypesInnerAthletesInner.model_structure()
+      ]
+    }
   end
 end
