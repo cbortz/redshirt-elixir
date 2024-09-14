@@ -99,7 +99,7 @@ defmodule Redshirt.Connection do
         Keyword.get(
           tesla_options,
           :user_agent,
-          "openapi-generator - Redshirt 4.4.12 - elixir"
+          "Redshirt #{Application.spec(:redshirt)[:vsn]} - elixir"
         )
       )
 

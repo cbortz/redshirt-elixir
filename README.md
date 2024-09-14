@@ -9,7 +9,7 @@ your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:redshirt, "~> 4.4.12"}]
+  [{:redshirt, "~> 0.0.1"}]
 end
 ``` -->
 
